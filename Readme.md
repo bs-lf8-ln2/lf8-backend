@@ -1,5 +1,5 @@
 # Starter für das LF08 Projekt
-
+GEÄNDERT FÜR JIRA TEST TEST TEST 
 ## Requirements
 * Docker https://docs.docker.com/get-docker/
 * Docker compose (bei Windows und Mac schon in Docker enthalten) https://docs.docker.com/compose/install/
