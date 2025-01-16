@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -12,6 +13,7 @@ import java.util.Set;
 @Setter
 public class ProjectCreateDto {
     @NotBlank(message = "Project name is required")
+    @UniqueProjectName(message = "A project with this name already exists")
     private String name;
 
     @NotNull(message = "Start date is required")
