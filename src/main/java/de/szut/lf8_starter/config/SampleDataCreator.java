@@ -29,5 +29,4 @@ public class SampleDataCreator implements ApplicationRunner {
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
-
 }
