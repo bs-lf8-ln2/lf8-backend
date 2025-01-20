@@ -35,7 +35,10 @@ public class ProjectPostIT extends AbstractIntegrationTest {
                       }
                     ]
                   },
-                  "customer": "ABC Inc.",
+                  "customer": {
+                    "id": 1,
+                    "name": "ACME Inc."
+                  },
                   "startDate": "2025-01-15",
                   "endDate": "2025-06-30",
                   "employees": [
@@ -72,6 +75,12 @@ public class ProjectPostIT extends AbstractIntegrationTest {
                 }
                 """;
 
+        final String customerJson = """
+                {
+                  "name": "ABC Inc."
+                }
+                """;
+
         final String exmployeeJson = """
                 {
                   "firstName": "John",
@@ -86,7 +95,7 @@ public class ProjectPostIT extends AbstractIntegrationTest {
                 {
                   "name": "New Website Development",
                   "projectManager": 1,
-                  "customer": "ABC Inc.",
+                  "customer": 1,
                   "startDate": "2025-01-15",
                   "endDate": "2025-06-30",
                   "employeeIds": [1]
@@ -98,6 +107,15 @@ public class ProjectPostIT extends AbstractIntegrationTest {
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("id").exists())
                 .andExpect(jsonPath("skill", is("Java")))
+                .andReturn()
+                .getResponse()
+                .getContentAsString();
+
+        final var customerContentAsString = this.mockMvc.perform(post("/customer").content(customerJson).contentType(MediaType.APPLICATION_JSON)
+                        .with(csrf()))
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("id").exists())
+                .andExpect(jsonPath("name", is("ABC Inc.")))
                 .andReturn()
                 .getResponse()
                 .getContentAsString();
@@ -122,7 +140,7 @@ public class ProjectPostIT extends AbstractIntegrationTest {
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("id").exists())
                 .andExpect(jsonPath("name", is("New Website Development")))
-                .andExpect(jsonPath("customer", is("ABC Inc.")))
+                .andExpect(jsonPath("customer.id", is(1)))
                 .andExpect(jsonPath("projectManager.id", is(1)))
                 .andExpect(jsonPath("startDate", is("2025-01-15")))
                 .andExpect(jsonPath("endDate", is("2025-06-30")))
@@ -137,7 +155,6 @@ public class ProjectPostIT extends AbstractIntegrationTest {
         assertThat(loadedEntity).isPresent();
         assertThat(loadedEntity.get().getId()).isEqualTo(projectId);
         assertThat(loadedEntity.get().getName()).isEqualTo("New Website Development");
-        assertThat(loadedEntity.get().getCustomer()).isEqualTo("ABC Inc.");
         assertThat(loadedEntity.get().getStartDate()).isEqualTo("2025-01-15");
         assertThat(loadedEntity.get().getEndDate()).isEqualTo("2025-06-30");
     }

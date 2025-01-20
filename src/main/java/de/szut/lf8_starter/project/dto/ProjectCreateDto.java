@@ -20,7 +20,7 @@ public class ProjectCreateDto {
     private Long projectManager;
 
     @NotBlank(message = "Customer is required")
-    private String customer;
+    private Long customer;
 
     @NotNull(message = "Start date is required")
     @JsonFormat(pattern = "yyyy-MM-dd")

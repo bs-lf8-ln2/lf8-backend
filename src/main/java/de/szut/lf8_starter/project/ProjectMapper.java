@@ -1,5 +1,7 @@
 package de.szut.lf8_starter.project;
 
+import de.szut.lf8_starter.customer.CustomerMapper;
+import de.szut.lf8_starter.customer.CustomerRepository;
 import de.szut.lf8_starter.employee.EmployeeMapper;
 import de.szut.lf8_starter.employee.EmployeeRepository;
 import de.szut.lf8_starter.exceptionHandling.ResourceNotFoundException;
@@ -15,9 +17,14 @@ public class ProjectMapper {
     private final EmployeeMapper employeeMapper;
     private final EmployeeRepository employeeRepository;
 
-    public ProjectMapper(EmployeeMapper employeeMapper, EmployeeRepository employeeRepository) {
+    private final CustomerMapper customerMapper;
+    private final CustomerRepository customerRepository;
+
+    public ProjectMapper(EmployeeMapper employeeMapper, EmployeeRepository employeeRepository, CustomerMapper customerMapper, CustomerRepository customerRepository) {
         this.employeeMapper = employeeMapper;
         this.employeeRepository = employeeRepository;
+        this.customerMapper = customerMapper;
+        this.customerRepository = customerRepository;
     }
 
     public ProjectGetDto mapToGetDto(ProjectEntity entity) {
@@ -25,7 +32,7 @@ public class ProjectMapper {
                 entity.getId(),
                 entity.getName(),
                 employeeMapper.mapToGetDto(entity.getProjectManager()),
-                entity.getCustomer(),
+                customerMapper.mapToGetDto(entity.getCustomer()),
                 entity.getStartDate(),
                 entity.getEndDate(),
                 entity.getEmployees().stream()
@@ -39,7 +46,8 @@ public class ProjectMapper {
         entity.setName(dto.getName());
         entity.setProjectManager(employeeRepository.findById(dto.getProjectManager())
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found with id: " + dto.getProjectManager())));
-        entity.setCustomer(dto.getCustomer());
+        entity.setCustomer(customerRepository.findById(dto.getCustomer())
+                .orElseThrow(() -> new ResourceNotFoundException("Customer not found with id: " + dto.getCustomer())));
         entity.setStartDate(dto.getStartDate());
         entity.setEndDate(dto.getEndDate());
 
@@ -59,7 +67,8 @@ public class ProjectMapper {
         entity.setName(dto.getName());
         entity.setProjectManager(employeeRepository.findById(dto.getProjectManager())
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found with id: " + dto.getProjectManager())));
-        entity.setCustomer(dto.getCustomer());
+        entity.setCustomer(customerRepository.findById(dto.getCustomer())
+                .orElseThrow(() -> new ResourceNotFoundException("Customer not found with id: " + dto.getCustomer())));
         entity.setStartDate(dto.getStartDate());
         entity.setEndDate(dto.getEndDate());
 

@@ -1,5 +1,6 @@
 package de.szut.lf8_starter.project;
 
+import de.szut.lf8_starter.customer.CustomerEntity;
 import de.szut.lf8_starter.employee.EmployeeEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -28,8 +29,9 @@ public class ProjectEntity {
     @JoinColumn(name = "project_manager_id")
     private EmployeeEntity projectManager;
 
-    @Column(name = "customer")
-    private String customer;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id")
+    private CustomerEntity customer;
 
     @Column(name = "start_date")
     private LocalDate startDate;
