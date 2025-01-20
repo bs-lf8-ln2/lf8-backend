@@ -11,9 +11,8 @@ import java.util.Set;
 
 @Getter
 @Setter
-public class ProjectCreateDto {
+public class ProjectUpdateDto {
     @NotBlank(message = "Project name is required")
-    @UniqueProjectName(message = "A project with this name already exists")
     private String name;
 
     @NotNull(message = "Project manager id is required")
@@ -32,4 +31,4 @@ public class ProjectCreateDto {
 
     @NotNull(message = "Employee list is required")
     private Set<Long> employeeIds;
-}
+} 

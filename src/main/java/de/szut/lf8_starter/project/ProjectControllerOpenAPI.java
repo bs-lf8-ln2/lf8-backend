@@ -2,6 +2,7 @@ package de.szut.lf8_starter.project;
 
 import de.szut.lf8_starter.project.dto.ProjectCreateDto;
 import de.szut.lf8_starter.project.dto.ProjectGetDto;
+import de.szut.lf8_starter.project.dto.ProjectUpdateDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -32,4 +33,30 @@ public interface ProjectControllerOpenAPI {
                     content = @Content)
     })
     List<ProjectGetDto> findAll();
+
+    @Operation(summary = "Update an existing project")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Project updated successfully",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ProjectGetDto.class))}),
+            @ApiResponse(responseCode = "400", description = "Invalid input",
+                    content = @Content),
+            @ApiResponse(responseCode = "401", description = "Not authorized",
+                    content = @Content),
+            @ApiResponse(responseCode = "404", description = "Project not found",
+                    content = @Content)
+    })
+    ProjectGetDto update(Long id, ProjectUpdateDto projectUpdateDto);
+
+    @Operation(summary = "Get a project by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Project found",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ProjectGetDto.class))}),
+            @ApiResponse(responseCode = "404", description = "Project not found",
+                    content = @Content),
+            @ApiResponse(responseCode = "401", description = "Not authorized",
+                    content = @Content)
+    })
+    ProjectGetDto getById(Long id);
 }
