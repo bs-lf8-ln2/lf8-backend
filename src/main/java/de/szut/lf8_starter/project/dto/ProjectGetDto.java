@@ -5,6 +5,7 @@ import de.szut.lf8_starter.employee.dto.EmployeeGetDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -14,6 +15,8 @@ import java.util.Set;
 public class ProjectGetDto {
     private Long id;
     private String name;
+    private EmployeeGetDto projectManager;
+    private String customer;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate startDate;

@@ -22,6 +22,20 @@ public class ProjectPostIT extends AbstractIntegrationTest {
                 {
                   "id": 1,
                   "name": "New Website Development",
+                  "projectManager": {
+                    "id": 1,
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "email": "john.doe@example.com",
+                    "department": "IT",
+                    "qualifications": [
+                      {
+                        "id": 1,
+                        "skill": "Java"
+                      }
+                    ]
+                  },
+                  "customer": "ABC Inc.",
                   "startDate": "2025-01-15",
                   "endDate": "2025-06-30",
                   "employees": [
@@ -71,6 +85,8 @@ public class ProjectPostIT extends AbstractIntegrationTest {
         final String projectJson = """
                 {
                   "name": "New Website Development",
+                  "projectManager": 1,
+                  "customer": "ABC Inc.",
                   "startDate": "2025-01-15",
                   "endDate": "2025-06-30",
                   "employeeIds": [1]
@@ -106,6 +122,8 @@ public class ProjectPostIT extends AbstractIntegrationTest {
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("id").exists())
                 .andExpect(jsonPath("name", is("New Website Development")))
+                .andExpect(jsonPath("customer", is("ABC Inc.")))
+                .andExpect(jsonPath("projectManager.id", is(1)))
                 .andExpect(jsonPath("startDate", is("2025-01-15")))
                 .andExpect(jsonPath("endDate", is("2025-06-30")))
                 .andReturn()
@@ -119,6 +137,7 @@ public class ProjectPostIT extends AbstractIntegrationTest {
         assertThat(loadedEntity).isPresent();
         assertThat(loadedEntity.get().getId()).isEqualTo(projectId);
         assertThat(loadedEntity.get().getName()).isEqualTo("New Website Development");
+        assertThat(loadedEntity.get().getCustomer()).isEqualTo("ABC Inc.");
         assertThat(loadedEntity.get().getStartDate()).isEqualTo("2025-01-15");
         assertThat(loadedEntity.get().getEndDate()).isEqualTo("2025-06-30");
     }

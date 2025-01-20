@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -21,6 +22,13 @@ public class ProjectEntity {
     private Long id;
 
     private String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "project_manager_id")
+    private EmployeeEntity projectManager;
+
+    @Column(name = "customer")
+    private String customer;
 
     @Column(name = "start_date")
     private LocalDate startDate;
