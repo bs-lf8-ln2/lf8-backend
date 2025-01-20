@@ -1,6 +1,7 @@
 package de.szut.lf8_starter.project.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import de.szut.lf8_starter.customer.dto.CustomerGetDto;
 import de.szut.lf8_starter.employee.dto.EmployeeGetDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +17,7 @@ public class ProjectGetDto {
     private Long id;
     private String name;
     private EmployeeGetDto projectManager;
-    private String customer;
+    private CustomerGetDto customer;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate startDate;
