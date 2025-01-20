@@ -4,6 +4,7 @@ import de.szut.lf8_starter.exceptionHandling.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -37,24 +38,26 @@ public class ProjectService {
 
     public ProjectEntity update(Long id, ProjectEntity updatedProject) {
         logger.info("Attempting to update project with id: {}", id);
-        
+
         // Find existing project
         ProjectEntity existingProject = repository.findById(id)
                 .orElseThrow(() -> {
                     logger.error("Project not found with id: {}", id);
                     return new ResourceNotFoundException("Project not found with id: " + id);
                 });
-        
+
         // Update fields
         existingProject.setName(updatedProject.getName());
+        existingProject.setProjectManager(updatedProject.getProjectManager());
+        existingProject.setCustomer(updatedProject.getCustomer());
         existingProject.setStartDate(updatedProject.getStartDate());
         existingProject.setEndDate(updatedProject.getEndDate());
         existingProject.setEmployees(updatedProject.getEmployees());
-        
+
         // Save and return
         ProjectEntity savedProject = repository.save(existingProject);
         logger.info("Successfully updated project with id: {}", id);
-        
+
         return savedProject;
     }
 }

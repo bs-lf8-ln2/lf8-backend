@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -13,6 +14,12 @@ import java.util.Set;
 public class ProjectCreateDto {
     @NotBlank(message = "Project name is required")
     private String name;
+
+    @NotNull(message = "Project manager id is required")
+    private Long projectManager;
+
+    @NotBlank(message = "Customer is required")
+    private String customer;
 
     @NotNull(message = "Start date is required")
     @JsonFormat(pattern = "yyyy-MM-dd")
