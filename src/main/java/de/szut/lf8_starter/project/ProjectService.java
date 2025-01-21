@@ -1,5 +1,6 @@
 package de.szut.lf8_starter.project;
 
+import de.szut.lf8_starter.exceptionHandling.ProjectNameAlreadyExistsException;
 import de.szut.lf8_starter.exceptionHandling.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,8 +17,11 @@ public class ProjectService {
         this.repository = repository;
     }
 
-    public ProjectEntity create(ProjectEntity entity) {
-        return this.repository.save(entity);
+    public ProjectEntity create(ProjectEntity projectEntity) {
+        if (repository.existsByName(projectEntity.getName())) {
+            throw new ProjectNameAlreadyExistsException("A project with the name " + projectEntity.getName() + " already exists.");
+        }
+        return repository.save(projectEntity);
     }
 
     public List<ProjectEntity> readAll() {

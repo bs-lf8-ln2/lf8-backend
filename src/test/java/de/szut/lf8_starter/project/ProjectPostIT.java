@@ -81,7 +81,7 @@ public class ProjectPostIT extends AbstractIntegrationTest {
                 }
                 """;
 
-        final String exmployeeJson = """
+        final String employeeJson = """
                 {
                   "firstName": "John",
                   "lastName": "Doe",
@@ -122,7 +122,7 @@ public class ProjectPostIT extends AbstractIntegrationTest {
 
         final var id = Long.parseLong(new JSONObject(contentAsString).get("id").toString());
 
-        final var employeeContentAsString = this.mockMvc.perform(post("/employee").content(exmployeeJson).contentType(MediaType.APPLICATION_JSON)
+        final var employeeContentAsString = this.mockMvc.perform(post("/employee").content(employeeJson).contentType(MediaType.APPLICATION_JSON)
                         .with(csrf()))
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("id").exists())
