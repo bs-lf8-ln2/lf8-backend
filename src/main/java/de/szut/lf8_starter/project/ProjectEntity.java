@@ -22,6 +22,7 @@ public class ProjectEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true, nullable = false, name = "name")
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)

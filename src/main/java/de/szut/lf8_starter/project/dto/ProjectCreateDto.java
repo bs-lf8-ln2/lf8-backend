@@ -13,6 +13,7 @@ import java.util.Set;
 @Setter
 public class ProjectCreateDto {
     @NotBlank(message = "Project name is required")
+    @UniqueProjectName(message = "A project with this name already exists")
     private String name;
 
     @NotNull(message = "Project manager id is required")
