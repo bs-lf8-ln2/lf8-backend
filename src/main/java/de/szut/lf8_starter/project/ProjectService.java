@@ -5,10 +5,12 @@ import de.szut.lf8_starter.exceptionHandling.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class ProjectService {
     private final ProjectRepository repository;
     private static final Logger logger = LoggerFactory.getLogger(ProjectService.class);
