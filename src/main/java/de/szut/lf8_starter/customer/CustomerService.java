@@ -1,10 +1,12 @@
 package de.szut.lf8_starter.customer;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class CustomerService {
     private final CustomerRepository repository;
 

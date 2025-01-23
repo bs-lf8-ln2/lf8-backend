@@ -1,9 +1,12 @@
 package de.szut.lf8_starter.qualification;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 @Service
+@Transactional
 public class QualificationService {
     private final QualificationRepository repository;
 
