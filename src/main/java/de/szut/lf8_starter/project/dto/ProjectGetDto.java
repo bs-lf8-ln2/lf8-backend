@@ -5,12 +5,14 @@ import de.szut.lf8_starter.customer.dto.CustomerGetDto;
 import de.szut.lf8_starter.employee.dto.EmployeeGetDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Set;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class ProjectGetDto {

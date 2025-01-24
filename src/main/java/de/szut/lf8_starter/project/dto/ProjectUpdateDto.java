@@ -18,7 +18,7 @@ public class ProjectUpdateDto {
     @NotNull(message = "Project manager id is required")
     private Long projectManager;
 
-    @NotBlank(message = "Customer is required")
+    @NotNull(message = "Customer is required")
     private Long customer;
 
     @NotNull(message = "Start date is required")

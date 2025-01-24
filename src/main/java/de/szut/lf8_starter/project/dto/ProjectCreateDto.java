@@ -3,6 +3,7 @@ package de.szut.lf8_starter.project.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,7 +20,7 @@ public class ProjectCreateDto {
     @NotNull(message = "Project manager id is required")
     private Long projectManager;
 
-    @NotBlank(message = "Customer is required")
+    @NotNull(message = "Customer is required")
     private Long customer;
 
     @NotNull(message = "Start date is required")
@@ -31,5 +32,6 @@ public class ProjectCreateDto {
     private LocalDate endDate;
 
     @NotNull(message = "Employee list is required")
+    @Size(min = 1, message = "At least one employee is required")
     private Set<Long> employeeIds;
 }
