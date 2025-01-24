@@ -1,0 +1,50 @@
+@token = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzUFQ0dldiNno5MnlQWk1EWnBqT1U0RjFVN0lwNi1ELUlqQWVGczJPbGU0In0.eyJleHAiOjE3Mzc0NDQ4MjMsImlhdCI6MTczNzQ0MTIyMywianRpIjoiOTk5NzcyNjQtMGYzYi00MDM2LWJhNmMtMzgwYThjNjRjN2IxIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5zenV0LmRldi9hdXRoL3JlYWxtcy9zenV0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjU1NDZjZDIxLTk4NTQtNDMyZi1hNDY3LTRkZTNlZWRmNTg4OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImVtcGxveWVlLW1hbmFnZW1lbnQtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiI2NjM0MmE2Yy1iZWQ5LTQwOTctOGVjYi05NGRhZGVjMGQ5OTAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDIwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicHJvZHVjdF9vd25lciIsIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zenV0IiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InVzZXIifQ.HBhIwj0PlJEC_uToREdj_zaQ0IzOB_bn0eezMC__VDYASb7HWMxU4hpFkHDcXUFzYEWtNWY8pCUZZ34KGDWQ3FcEvNHx_Ok7FLp5mdgkT9pyYt7uHLkqKfWtPALJjlt1-TkQW0Lwp93cNwVjAKacvbQUBlAoCenyvbll3P4c4lW3MnNSTtTaJWISFlWRF0hIwJzQXwyw14NCWR3RIyi5GUU5YdX6XOdeYs8kRrvUO-tC8GfBfinVWRMd87jvuOiskF2ynDct6nTF3zOyxbDuGTNbbFxL7Pt6wWjNO2ShBejKgFJPsRI4P-PC7mM6Y0kiO8TWhTBVlKmGs02jKr7PJQ
+
+###
+POST localhost:8080/qualifications
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "skill": "Java"
+}
+
+###
+POST localhost:8080/employee
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "department": "IT",
+  "qualificationIds": [
+    1
+  ]
+}
+
+###
+POST localhost:8080/customer
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "ACME Inc."
+}
+
+###
+POST localhost:8080/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "New Website Development",
+  "projectManager": 1,
+  "customer": 1,
+  "startDate": "2025-01-15",
+  "endDate": "2025-06-30",
+  "employeeIds": [
+    1
+  ]
+}
