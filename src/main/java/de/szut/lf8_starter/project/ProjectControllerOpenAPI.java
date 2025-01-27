@@ -9,7 +9,8 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.RequestParam;
 
 public interface ProjectControllerOpenAPI {
     @Operation(summary = "Create a new project")
@@ -26,13 +27,15 @@ public interface ProjectControllerOpenAPI {
 
     @Operation(summary = "Get all projects")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "List of all projects",
-                    content = {@Content(mediaType = "application/json",
-                            array = @ArraySchema(schema = @Schema(implementation = ProjectGetDto.class)))}),
-            @ApiResponse(responseCode = "401", description = "Not authorized",
-                    content = @Content)
+            @ApiResponse(responseCode = "200", description = "List of all projects"),
+            @ApiResponse(responseCode = "401", description = "Not authorized")
     })
-    List<ProjectGetDto> findAll();
+    Page<ProjectGetDto> findAll(
+        @RequestParam(defaultValue = "0") int page,
+        @RequestParam(defaultValue = "50") int size,
+        @RequestParam(required = false) Long managerId,
+        @RequestParam(required = false) Long customerId
+    );
 
     @Operation(summary = "Update an existing project")
     @ApiResponses(value = {
