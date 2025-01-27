@@ -8,6 +8,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -40,13 +44,17 @@ public class ProjectController implements ProjectControllerOpenAPI {
     }
 
     @GetMapping
-    public List<ProjectGetDto> findAll() {
+    public Page<ProjectGetDto> findAll(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "50") int size,
+            @RequestParam(required = false) Long managerId,
+            @RequestParam(required = false) Long customerId) {
         logger.info("GET request received for all projects");
+        
+        Pageable pageable = PageRequest.of(page, Math.min(size, 50), Sort.by(Sort.Direction.DESC, "createdAt"));
         return this.service
-                .readAll()
-                .stream()
-                .map(e -> this.projectMapper.mapToGetDto(e))
-                .collect(Collectors.toList());
+                .readAll(managerId, customerId, pageable)
+                .map(this.projectMapper::mapToGetDto);
     }
 
     @PutMapping("/{id}")
