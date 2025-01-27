@@ -5,21 +5,20 @@ import de.szut.lf8_starter.project.dto.ProjectCreateDto;
 import de.szut.lf8_starter.project.dto.ProjectGetDto;
 import de.szut.lf8_starter.project.dto.ProjectUpdateDto;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.server.ResponseStatusException;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.HashMap;
 
 @RestController
 @RequestMapping("/projects")
@@ -54,23 +53,23 @@ public class ProjectController implements ProjectControllerOpenAPI {
     @ResponseStatus(HttpStatus.OK)
     public ProjectGetDto update(@PathVariable Long id, @RequestBody @Valid ProjectUpdateDto projectUpdateDto) {
         logger.info("PUT request received for project id: {}", id);
-        
+
         try {
             ProjectEntity projectEntity = this.projectMapper.mapUpdateDtoToEntity(projectUpdateDto);
             ProjectEntity updatedEntity = this.service.update(id, projectEntity);
             ProjectGetDto updatedProject = this.projectMapper.mapToGetDto(updatedEntity);
-            
+
             // Add success message to response headers
             HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder
-                .currentRequestAttributes())
-                .getResponse();
+                    .currentRequestAttributes())
+                    .getResponse();
             if (response != null) {
                 response.setHeader("X-Success-Message", "Project successfully updated");
             }
-            
+
             logger.info("Project successfully updated with id: {}", id);
             return updatedProject;
-            
+
         } catch (ResourceNotFoundException e) {
             logger.error("Project not found with id: {}", id);
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
@@ -90,6 +89,20 @@ public class ProjectController implements ProjectControllerOpenAPI {
         } catch (Exception e) {
             logger.error("Error getting project: ", e);
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Project not found with id: " + id);
+        }
+    }
+
+    @DeleteMapping("/{id}/employees/{employeeId}")
+    public ResponseEntity<Map<String, Boolean>> removeEmployeeFromProject(@PathVariable Long id, @PathVariable Long employeeId) {
+        logger.info("DELETE request received for project id: {} and employee id: {}", id, employeeId);
+        try {
+            this.service.removeEmployeeFromProject(id, employeeId);
+            Map<String, Boolean> response = new HashMap<>();
+            response.put("deleted", Boolean.TRUE);
+            return ResponseEntity.ok(response);
+        } catch (ResourceNotFoundException e) {
+            logger.error("Project or employee not found with id: {}", id);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
     }
 }
