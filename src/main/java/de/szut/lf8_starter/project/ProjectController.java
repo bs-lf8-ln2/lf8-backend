@@ -1,9 +1,13 @@
 package de.szut.lf8_starter.project;
 
 import de.szut.lf8_starter.exceptionHandling.ResourceNotFoundException;
+import de.szut.lf8_starter.project.dto.AddEmployeeToProjectDto;
 import de.szut.lf8_starter.project.dto.ProjectCreateDto;
 import de.szut.lf8_starter.project.dto.ProjectGetDto;
 import de.szut.lf8_starter.project.dto.ProjectUpdateDto;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -54,23 +58,23 @@ public class ProjectController implements ProjectControllerOpenAPI {
     @ResponseStatus(HttpStatus.OK)
     public ProjectGetDto update(@PathVariable Long id, @RequestBody @Valid ProjectUpdateDto projectUpdateDto) {
         logger.info("PUT request received for project id: {}", id);
-        
+
         try {
             ProjectEntity projectEntity = this.projectMapper.mapUpdateDtoToEntity(projectUpdateDto);
             ProjectEntity updatedEntity = this.service.update(id, projectEntity);
             ProjectGetDto updatedProject = this.projectMapper.mapToGetDto(updatedEntity);
-            
+
             // Add success message to response headers
             HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder
-                .currentRequestAttributes())
-                .getResponse();
+                    .currentRequestAttributes())
+                    .getResponse();
             if (response != null) {
                 response.setHeader("X-Success-Message", "Project successfully updated");
             }
-            
+
             logger.info("Project successfully updated with id: {}", id);
             return updatedProject;
-            
+
         } catch (ResourceNotFoundException e) {
             logger.error("Project not found with id: {}", id);
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
@@ -90,6 +94,45 @@ public class ProjectController implements ProjectControllerOpenAPI {
         } catch (Exception e) {
             logger.error("Error getting project: ", e);
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Project not found with id: " + id);
+        }
+    }
+
+
+    @PostMapping("/{projectId}/add-employee")
+    public ResponseEntity<?> addEmployeeToProject(
+            @PathVariable Long projectId,
+            @RequestBody @Valid AddEmployeeToProjectDto dto) {
+
+        logger.info("Adding employee {} to project {} with qualification {}",
+                dto.getEmployeeId(), projectId, dto.getQualification());
+
+        try {
+            ProjectEntity updatedProject = service.addEmployeeToProject(
+                    projectId,
+                    dto.getEmployeeId(),
+                    dto.getQualification()
+            );
+            return ResponseEntity.ok(projectMapper.mapToGetDto(updatedProject));
+
+        } catch (ResourceNotFoundException e) {
+            logger.error("Resource not found: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(e.getMessage());
+
+        } catch (IllegalStateException e) {
+            logger.error("Invalid state: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(e.getMessage());
+
+        } catch (IllegalArgumentException e) {
+            logger.error("Invalid argument: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(e.getMessage());
+
+        } catch (Exception e) {
+            logger.error("Unexpected error while adding employee to project", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("An unexpected error occurred");
         }
     }
 }
