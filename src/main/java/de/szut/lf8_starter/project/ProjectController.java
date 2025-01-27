@@ -9,21 +9,20 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.server.ResponseStatusException;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.HashMap;
 
 @RestController
 @RequestMapping("/projects")
@@ -97,7 +96,6 @@ public class ProjectController implements ProjectControllerOpenAPI {
         }
     }
 
-
     @PostMapping("/{projectId}/add-employee")
     public ResponseEntity<?> addEmployeeToProject(
             @PathVariable Long projectId,
@@ -133,6 +131,20 @@ public class ProjectController implements ProjectControllerOpenAPI {
             logger.error("Unexpected error while adding employee to project", e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("An unexpected error occurred");
+        }
+    }
+  
+    @DeleteMapping("/{id}/employees/{employeeId}")
+    public ResponseEntity<Map<String, Boolean>> removeEmployeeFromProject(@PathVariable Long id, @PathVariable Long employeeId) {
+        logger.info("DELETE request received for project id: {} and employee id: {}", id, employeeId);
+        try {
+            this.service.removeEmployeeFromProject(id, employeeId);
+            Map<String, Boolean> response = new HashMap<>();
+            response.put("deleted", Boolean.TRUE);
+            return ResponseEntity.ok(response);
+        } catch (ResourceNotFoundException e) {
+            logger.error("Project or employee not found with id: {}", id);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
     }
 }

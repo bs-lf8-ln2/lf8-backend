@@ -74,6 +74,7 @@ public class ProjectService {
         return savedProject;
     }
 
+
     @Transactional
     public ProjectEntity addEmployeeToProject(Long projectId, Long employeeId, String qualificationName) {
         // 1. Projekt und Mitarbeiter abrufen
@@ -127,5 +128,27 @@ public class ProjectService {
                             employee.getLastName())
             );
         }
+    }
+
+    public void removeEmployeeFromProject(Long id, Long employeeId) {
+        logger.info("Attempting to remove employee with id: {} from project with id: {}", employeeId, id);
+
+        // Find existing project
+        ProjectEntity existingProject = repository.findById(id)
+                .orElseThrow(() -> {
+                    logger.error("Project not found with id: {}", id);
+                    return new ResourceNotFoundException("Project not found with id: " + id);
+                });
+
+        // Remove employee
+        boolean removed = existingProject.getEmployees().removeIf(employee -> employee.getId().equals(employeeId));
+        if (!removed) {
+            logger.warn("Employee with id: {} not found in project with id: {}", employeeId, id);
+            throw new ResourceNotFoundException("Employee not found in project");
+        }
+
+        // Save and return
+        repository.save(existingProject);
+        logger.info("Successfully removed employee with id: {} from project with id: {}", employeeId, id);
     }
 }
