@@ -6,6 +6,8 @@ import de.szut.lf8_starter.exceptionHandling.ProjectNameAlreadyExistsException;
 import de.szut.lf8_starter.exceptionHandling.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -150,5 +152,9 @@ public class ProjectService {
         // Save and return
         repository.save(existingProject);
         logger.info("Successfully removed employee with id: {} from project with id: {}", employeeId, id);
+    }
+
+    public Page<ProjectEntity> readAll(Long managerId, Long customerId, Pageable pageable) {
+        return repository.findAllWithFilters(managerId, customerId, pageable);
     }
 }
