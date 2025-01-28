@@ -6,9 +6,9 @@ import de.szut.lf8_starter.exceptionHandling.ProjectNameAlreadyExistsException;
 import de.szut.lf8_starter.exceptionHandling.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -156,5 +156,18 @@ public class ProjectService {
 
     public Page<ProjectEntity> readAll(Long managerId, Long customerId, Pageable pageable) {
         return repository.findAllWithFilters(managerId, customerId, pageable);
+    }
+
+    public void delete(Long id) {
+        logger.info("Attempting to delete project with id: {}", id);
+
+        ProjectEntity existingProject = repository.findById(id)
+                .orElseThrow(() -> {
+                    logger.error("Project not found with id: {}", id);
+                    return new ResourceNotFoundException("Project not found with id: " + id);
+                });
+
+        repository.delete(existingProject);
+        logger.info("Successfully deleted project with id: {}", id);
     }
 }

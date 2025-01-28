@@ -5,9 +5,6 @@ import de.szut.lf8_starter.project.dto.AddEmployeeToProjectDto;
 import de.szut.lf8_starter.project.dto.ProjectCreateDto;
 import de.szut.lf8_starter.project.dto.ProjectGetDto;
 import de.szut.lf8_starter.project.dto.ProjectUpdateDto;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -24,9 +21,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/projects")
@@ -54,7 +49,7 @@ public class ProjectController implements ProjectControllerOpenAPI {
             @RequestParam(required = false) Long managerId,
             @RequestParam(required = false) Long customerId) {
         logger.info("GET request received for all projects");
-        
+
         Pageable pageable = PageRequest.of(page, Math.min(size, 50), Sort.by(Sort.Direction.DESC, "createdAt"));
         return this.service
                 .readAll(managerId, customerId, pageable)
@@ -141,7 +136,7 @@ public class ProjectController implements ProjectControllerOpenAPI {
                     .body("An unexpected error occurred");
         }
     }
-  
+
     @DeleteMapping("/{id}/employees/{employeeId}")
     public ResponseEntity<Map<String, Boolean>> removeEmployeeFromProject(@PathVariable Long id, @PathVariable Long employeeId) {
         logger.info("DELETE request received for project id: {} and employee id: {}", id, employeeId);
@@ -152,6 +147,20 @@ public class ProjectController implements ProjectControllerOpenAPI {
             return ResponseEntity.ok(response);
         } catch (ResourceNotFoundException e) {
             logger.error("Project or employee not found with id: {}", id);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Map<String, Boolean>> delete(@PathVariable Long id) {
+        logger.info("DELETE request received for project id: {}", id);
+        try {
+            this.service.delete(id);
+            Map<String, Boolean> response = new HashMap<>();
+            response.put("deleted", Boolean.TRUE);
+            return ResponseEntity.ok(response);
+        } catch (ResourceNotFoundException e) {
+            logger.error("Project not found with id: {}", id);
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
     }
