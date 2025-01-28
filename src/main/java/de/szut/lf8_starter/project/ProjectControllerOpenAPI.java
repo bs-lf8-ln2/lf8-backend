@@ -1,5 +1,6 @@
 package de.szut.lf8_starter.project;
 
+import de.szut.lf8_starter.project.dto.AddEmployeeToProjectDto;
 import de.szut.lf8_starter.project.dto.ProjectCreateDto;
 import de.szut.lf8_starter.project.dto.ProjectGetDto;
 import de.szut.lf8_starter.project.dto.ProjectUpdateDto;
@@ -9,6 +10,8 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import org.springframework.http.ResponseEntity;
+
 import java.util.List;
 
 public interface ProjectControllerOpenAPI {
@@ -59,4 +62,25 @@ public interface ProjectControllerOpenAPI {
                     content = @Content)
     })
     ProjectGetDto getById(Long id);
+
+
+    @Operation(summary = "Add an employee to a project with specific qualification")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Employee successfully added to project",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ProjectGetDto.class))}),
+            @ApiResponse(responseCode = "400", description = "Invalid input or employee doesn't have required qualification",
+                    content = @Content),
+            @ApiResponse(responseCode = "404", description = "Project or Employee not found",
+                    content = @Content),
+            @ApiResponse(responseCode = "409", description = "Employee already assigned or not available",
+                    content = @Content),
+            @ApiResponse(responseCode = "500", description = "Internal server error",
+                    content = @Content)
+    })
+    ResponseEntity<?> addEmployeeToProject(Long projectId, AddEmployeeToProjectDto dto);
+
+
+
+
 }
