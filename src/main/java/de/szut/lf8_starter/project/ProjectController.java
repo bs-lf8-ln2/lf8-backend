@@ -1,9 +1,13 @@
 package de.szut.lf8_starter.project;
 
 import de.szut.lf8_starter.exceptionHandling.ResourceNotFoundException;
+import de.szut.lf8_starter.project.dto.AddEmployeeToProjectDto;
 import de.szut.lf8_starter.project.dto.ProjectCreateDto;
 import de.szut.lf8_starter.project.dto.ProjectGetDto;
 import de.szut.lf8_starter.project.dto.ProjectUpdateDto;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -100,6 +104,44 @@ public class ProjectController implements ProjectControllerOpenAPI {
         }
     }
 
+    @PostMapping("/{projectId}/add-employee")
+    public ResponseEntity<?> addEmployeeToProject(
+            @PathVariable Long projectId,
+            @RequestBody @Valid AddEmployeeToProjectDto dto) {
+
+        logger.info("Adding employee {} to project {} with qualification {}",
+                dto.getEmployeeId(), projectId, dto.getQualification());
+
+        try {
+            ProjectEntity updatedProject = service.addEmployeeToProject(
+                    projectId,
+                    dto.getEmployeeId(),
+                    dto.getQualification()
+            );
+            return ResponseEntity.ok(projectMapper.mapToGetDto(updatedProject));
+
+        } catch (ResourceNotFoundException e) {
+            logger.error("Resource not found: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(e.getMessage());
+
+        } catch (IllegalStateException e) {
+            logger.error("Invalid state: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(e.getMessage());
+
+        } catch (IllegalArgumentException e) {
+            logger.error("Invalid argument: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(e.getMessage());
+
+        } catch (Exception e) {
+            logger.error("Unexpected error while adding employee to project", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("An unexpected error occurred");
+        }
+    }
+  
     @DeleteMapping("/{id}/employees/{employeeId}")
     public ResponseEntity<Map<String, Boolean>> removeEmployeeFromProject(@PathVariable Long id, @PathVariable Long employeeId) {
         logger.info("DELETE request received for project id: {} and employee id: {}", id, employeeId);
