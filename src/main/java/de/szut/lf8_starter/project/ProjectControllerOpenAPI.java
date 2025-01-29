@@ -2,6 +2,7 @@ package de.szut.lf8_starter.project;
 
 import de.szut.lf8_starter.project.dto.AddEmployeeToProjectDto;
 import de.szut.lf8_starter.project.dto.ProjectCreateDto;
+import de.szut.lf8_starter.project.dto.ProjectEmployeesDto;
 import de.szut.lf8_starter.project.dto.ProjectGetDto;
 import de.szut.lf8_starter.project.dto.ProjectUpdateDto;
 import io.swagger.v3.oas.annotations.Operation;
@@ -82,5 +83,17 @@ public interface ProjectControllerOpenAPI {
                     content = @Content)
     })
     ResponseEntity<?> addEmployeeToProject(Long projectId, AddEmployeeToProjectDto dto);
+
+    @Operation(summary = "Get all employees of a project")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "List of all project employees",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ProjectEmployeesDto.class))}),
+            @ApiResponse(responseCode = "404", description = "Project not found",
+                    content = @Content),
+            @ApiResponse(responseCode = "401", description = "Not authorized",
+                    content = @Content)
+    })
+    ProjectEmployeesDto getProjectEmployees(Long projectId);
 
 }

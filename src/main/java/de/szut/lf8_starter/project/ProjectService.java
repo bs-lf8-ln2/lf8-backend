@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @Transactional
@@ -132,6 +133,11 @@ public class ProjectService {
         }
     }
 
+    public Set<EmployeeEntity> getProjectEmployees(Long projectId) {
+        logger.info("Fetching employees for project with id: {}", projectId);
+        ProjectEntity project = getProjectById(projectId);
+        return project.getEmployees();
+  }
     public void removeEmployeeFromProject(Long id, Long employeeId) {
         logger.info("Attempting to remove employee with id: {} from project with id: {}", employeeId, id);
 
