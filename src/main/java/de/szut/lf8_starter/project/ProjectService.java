@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @Transactional
@@ -127,5 +128,11 @@ public class ProjectService {
                             employee.getLastName())
             );
         }
+    }
+
+    public Set<EmployeeEntity> getProjectEmployees(Long projectId) {
+        logger.info("Fetching employees for project with id: {}", projectId);
+        ProjectEntity project = getProjectById(projectId);
+        return project.getEmployees();
     }
 }
