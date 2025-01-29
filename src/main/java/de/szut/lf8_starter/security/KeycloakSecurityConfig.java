@@ -1,28 +1,24 @@
 package de.szut.lf8_starter.security;
 
-import java.util.*;
-import java.util.stream.Collectors;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.authority.mapping.GrantedAuthoritiesMapper;
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
-import org.springframework.security.oauth2.core.oidc.user.OidcUserAuthority;
-import org.springframework.security.oauth2.core.user.OAuth2UserAuthority;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
-import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy;
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
 import org.springframework.security.web.session.HttpSessionEventPublisher;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @Configuration
 @EnableWebSecurity
@@ -59,7 +55,13 @@ class KeycloakSecurityConfig {
                         new AntPathRequestMatcher("/swagger-ui/**"),
                         new AntPathRequestMatcher("/v3/api-docs/**"))
                 .permitAll()
-                .requestMatchers(new AntPathRequestMatcher("/hello/**"))
+                // Add the new endpoints requiring "user" role here
+                .requestMatchers(
+                        new AntPathRequestMatcher("/hello/**"),
+                        new AntPathRequestMatcher("/qualifications/**"),
+                        new AntPathRequestMatcher("/employee/**"),
+                        new AntPathRequestMatcher("/customer/**"),
+                        new AntPathRequestMatcher("/projects/**"))
                 .hasRole("user")
                 .requestMatchers(new AntPathRequestMatcher("/roles"))
                 .authenticated()
@@ -69,6 +71,7 @@ class KeycloakSecurityConfig {
                 .authenticated()).oauth2ResourceServer(spec -> spec.jwt(Customizer.withDefaults()));
         return http.build();
     }
+
 
     @Bean
     public JwtAuthenticationConverter jwtAuthenticationConverter() {
