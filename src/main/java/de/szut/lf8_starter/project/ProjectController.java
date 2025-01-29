@@ -11,6 +11,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +22,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -42,13 +47,17 @@ public class ProjectController implements ProjectControllerOpenAPI {
     }
 
     @GetMapping
-    public List<ProjectGetDto> findAll() {
+    public Page<ProjectGetDto> findAll(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "50") int size,
+            @RequestParam(required = false) Long managerId,
+            @RequestParam(required = false) Long customerId) {
         logger.info("GET request received for all projects");
+        
+        Pageable pageable = PageRequest.of(page, Math.min(size, 50), Sort.by(Sort.Direction.DESC, "createdAt"));
         return this.service
-                .readAll()
-                .stream()
-                .map(e -> this.projectMapper.mapToGetDto(e))
-                .collect(Collectors.toList());
+                .readAll(managerId, customerId, pageable)
+                .map(this.projectMapper::mapToGetDto);
     }
 
     @PutMapping("/{id}")
@@ -150,5 +159,19 @@ public class ProjectController implements ProjectControllerOpenAPI {
                 .collect(Collectors.toSet());
 
         return new ProjectEmployeesDto(project.getId(), project.getName(), employeeDtos);
+    }
+  
+    @DeleteMapping("/{id}/employees/{employeeId}")
+    public ResponseEntity<Map<String, Boolean>> removeEmployeeFromProject(@PathVariable Long id, @PathVariable Long employeeId) {
+        logger.info("DELETE request received for project id: {} and employee id: {}", id, employeeId);
+        try {
+            this.service.removeEmployeeFromProject(id, employeeId);
+            Map<String, Boolean> response = new HashMap<>();
+            response.put("deleted", Boolean.TRUE);
+            return ResponseEntity.ok(response);
+        } catch (ResourceNotFoundException e) {
+            logger.error("Project or employee not found with id: {}", id);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        }
     }
 }

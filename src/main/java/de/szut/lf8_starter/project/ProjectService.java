@@ -7,6 +7,8 @@ import de.szut.lf8_starter.exceptionHandling.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,33 +19,33 @@ import java.util.Set;
 @Service
 @Transactional
 public class ProjectService {
-    private final ProjectRepository repository;
+    private final ProjectRepository projectRepository;
     private static final Logger logger = LoggerFactory.getLogger(ProjectService.class);
 
     @Autowired
     private EmployeeService employeeService;
 
     public ProjectService(ProjectRepository repository) {
-        this.repository = repository;
+        this.projectRepository = repository;
     }
 
     public ProjectEntity create(ProjectEntity projectEntity) {
-        if (repository.existsByName(projectEntity.getName())) {
+        if (projectRepository.existsByName(projectEntity.getName())) {
             throw new ProjectNameAlreadyExistsException("A project with the name " + projectEntity.getName() + " already exists.");
         }
-        return repository.save(projectEntity);
+        return projectRepository.save(projectEntity);
     }
 
     public List<ProjectEntity> readAll() {
         logger.info("Fetching all projects");
-        List<ProjectEntity> projects = this.repository.findAll();
+        List<ProjectEntity> projects = this.projectRepository.findAll();
         logger.info("Found {} projects", projects.size());
         return projects;
     }
 
     public ProjectEntity getProjectById(Long id) {
         logger.info("Attempting to find project with id: {}", id);
-        return this.repository.findById(id)
+        return this.projectRepository.findById(id)
                 .orElseThrow(() -> {
                     logger.error("Project not found with id: {}", id);
                     return new ResourceNotFoundException("Project not found with id: " + id);
@@ -54,7 +56,7 @@ public class ProjectService {
         logger.info("Attempting to update project with id: {}", id);
 
         // Find existing project
-        ProjectEntity existingProject = repository.findById(id)
+        ProjectEntity existingProject = projectRepository.findById(id)
                 .orElseThrow(() -> {
                     logger.error("Project not found with id: {}", id);
                     return new ResourceNotFoundException("Project not found with id: " + id);
@@ -69,11 +71,12 @@ public class ProjectService {
         existingProject.setEmployees(updatedProject.getEmployees());
 
         // Save and return
-        ProjectEntity savedProject = repository.save(existingProject);
+        ProjectEntity savedProject = projectRepository.save(existingProject);
         logger.info("Successfully updated project with id: {}", id);
 
         return savedProject;
     }
+
 
     @Transactional
     public ProjectEntity addEmployeeToProject(Long projectId, Long employeeId, String qualificationName) {
@@ -107,12 +110,12 @@ public class ProjectService {
         project.getEmployees().add(employee);
 
         // 6. Änderungen speichern
-        return repository.save(project);
+        return projectRepository.save(project);
     }
 
     private void checkEmployeeAvailability(EmployeeEntity employee, LocalDate startDate, LocalDate endDate) {
         // Prüfe in allen Projekten, ob der Mitarbeiter im Zeitraum schon verplant ist
-        List<ProjectEntity> allProjects = repository.findAll();
+        List<ProjectEntity> allProjects = projectRepository.findAll();
 
         boolean isEmployeeBooked = allProjects.stream()
                 .filter(p -> p.getEmployees().contains(employee))
@@ -134,5 +137,41 @@ public class ProjectService {
         logger.info("Fetching employees for project with id: {}", projectId);
         ProjectEntity project = getProjectById(projectId);
         return project.getEmployees();
+  }
+    public void removeEmployeeFromProject(Long id, Long employeeId) {
+        logger.info("Attempting to remove employee with id: {} from project with id: {}", employeeId, id);
+
+        // Find existing project
+        ProjectEntity existingProject = projectRepository.findById(id)
+                .orElseThrow(() -> {
+                    logger.error("Project not found with id: {}", id);
+                    return new ResourceNotFoundException("Project not found with id: " + id);
+                });
+
+        // Remove employee
+        boolean removed = existingProject.getEmployees().removeIf(employee -> employee.getId().equals(employeeId));
+        if (!removed) {
+            logger.warn("Employee with id: {} not found in project with id: {}", employeeId, id);
+            throw new ResourceNotFoundException("Employee not found in project");
+        }
+
+        // Save and return
+        projectRepository.save(existingProject);
+        logger.info("Successfully removed employee with id: {} from project with id: {}", employeeId, id);
+    }
+
+    public Page<ProjectEntity> readAll(Long managerId, Long customerId, Pageable pageable) {
+        return projectRepository.findAllWithFilters(managerId, customerId, pageable);
+    }
+
+    public void deleteById(Long projectId) {
+        ProjectEntity project = projectRepository.findById(projectId)
+                .orElseThrow(() -> {
+                    logger.error("Project with ID {} does not exist", projectId);
+                    return new ResourceNotFoundException("Project with ID " + projectId + " does not exist.");
+                });
+
+        projectRepository.delete(project);
+        logger.info("Deleted project with ID: {}", projectId);
     }
 }
