@@ -94,4 +94,16 @@ public class ProjectService {
     public Page<ProjectEntity> readAll(Long managerId, Long customerId, Pageable pageable) {
         return repository.findAllWithFilters(managerId, customerId, pageable);
     }
+
+    @Transactional
+    public ProjectEntity addEmployeeToProject(String name, Long employeeId) {
+        // ... existing code ...
+        
+        // Check employee availability
+        if (!employeeService.isEmployeeAvailable(employeeId)) {
+            throw new EmployeeNotAvailableException("Employee is not available for this project");
+        }
+        
+        // ... rest of the code ...
+    }
 }
