@@ -2,6 +2,10 @@ package de.szut.lf8_starter.project;
 
 import de.szut.lf8_starter.exceptionHandling.ProjectNameAlreadyExistsException;
 import de.szut.lf8_starter.exceptionHandling.ResourceNotFoundException;
+import de.szut.lf8_starter.exceptionHandling.EmployeeNotAvailableException;
+import de.szut.lf8_starter.employee.EmployeeService;
+import de.szut.lf8_starter.employee.EmployeeEntity;
+import de.szut.lf8_starter.employee.EmployeeRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -15,10 +19,14 @@ import java.util.List;
 @Transactional
 public class ProjectService {
     private final ProjectRepository repository;
+    private final EmployeeRepository employeeRepository;
+    private final EmployeeService employeeService;
     private static final Logger logger = LoggerFactory.getLogger(ProjectService.class);
 
-    public ProjectService(ProjectRepository repository) {
+    public ProjectService(ProjectRepository repository, EmployeeRepository employeeRepository, EmployeeService employeeService) {
         this.repository = repository;
+        this.employeeRepository = employeeRepository;
+        this.employeeService = employeeService;
     }
 
     public ProjectEntity create(ProjectEntity projectEntity) {
@@ -97,13 +105,18 @@ public class ProjectService {
 
     @Transactional
     public ProjectEntity addEmployeeToProject(String name, Long employeeId) {
-        // ... existing code ...
-        
+        ProjectEntity project = repository.findByName(name)
+            .orElseThrow(() -> new ResourceNotFoundException("Project not found"));
+            
         // Check employee availability
         if (!employeeService.isEmployeeAvailable(employeeId)) {
             throw new EmployeeNotAvailableException("Employee is not available for this project");
         }
-        
-        // ... rest of the code ...
+            
+        EmployeeEntity employee = employeeRepository.findById(employeeId)
+            .orElseThrow(() -> new ResourceNotFoundException("Employee not found"));
+            
+        project.getEmployees().add(employee);
+        return repository.save(project);
     }
 }

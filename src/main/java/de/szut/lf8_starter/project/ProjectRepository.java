@@ -9,12 +9,14 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 public interface ProjectRepository extends JpaRepository<ProjectEntity, Long> {
     boolean existsByNameIgnoreCase(String name);
 
     boolean existsByName(String name);
 
+    Optional<ProjectEntity> findByName(String name);
 
     @Query("SELECT p FROM ProjectEntity p JOIN p.employees e WHERE e.id = :employeeId")
     Collection<ProjectEntity> getProjectEntitiesByEmployees(@Param("employeeId") Long employeeId);
