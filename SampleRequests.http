@@ -1,27 +1,9 @@
-@token = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzUFQ0dldiNno5MnlQWk1EWnBqT1U0RjFVN0lwNi1ELUlqQWVGczJPbGU0In0.eyJleHAiOjE3MzgxNDcwNjcsImlhdCI6MTczODE0MzQ2NywianRpIjoiNDI1YTRlY2MtZGUyMi00ODY1LWFhZDgtNTQyNTkwYWQ2YjkxIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5zenV0LmRldi9hdXRoL3JlYWxtcy9zenV0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjU1NDZjZDIxLTk4NTQtNDMyZi1hNDY3LTRkZTNlZWRmNTg4OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImVtcGxveWVlLW1hbmFnZW1lbnQtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiJiNDEwNGQ2YS1jMzU4LTRmMjQtYjQ0My04ZjVhZTcwZTdkZGYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDIwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicHJvZHVjdF9vd25lciIsIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zenV0IiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InVzZXIifQ.hEpWwj68Hft3Fbx1Thk2EW9N3WSgv3unANe0XvuZxa2n6n0Zho5uasZ5y42VNHANfQXfIBeq0c3H79cAO3qMfWJtvfUnWmojR17Ec1NhCIl-lB-_orKuyWpF8Hfss3k812XYEpi5iU0h9n9y1wUwIHKy7gmvMcCtmmM63iHaI6nvZnc6Wg5QYSKd5jS9ofcQc2AUiBhQsFJC8aH25e7s0CXB1BBNL-AJ4Dl2LoZKLeP2LcIIe5SMG3cgqAHp_I4rW1VILYfHg5NB-MZIVQbzziRqprMB1l-nOAckp2ioHJHRjID_JoHLItV530jEHacebOZqjokEBHbVLN7HULuoNg
-
+@token = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzUFQ0dldiNno5MnlQWk1EWnBqT1U0RjFVN0lwNi1ELUlqQWVGczJPbGU0In0.eyJleHAiOjE3MzgyMzI1ODcsImlhdCI6MTczODIyODk4NywianRpIjoiOWIwYTc2YTAtMWMwYS00MjM0LWIxMjgtMzZmODc5NTgwYjcwIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5zenV0LmRldi9hdXRoL3JlYWxtcy9zenV0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjU1NDZjZDIxLTk4NTQtNDMyZi1hNDY3LTRkZTNlZWRmNTg4OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImVtcGxveWVlLW1hbmFnZW1lbnQtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiIwZDE3ZThmNC1iZjhhLTQ2MjUtOTQ5OS1jNTJkOGQ4ZTQwYmYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDIwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicHJvZHVjdF9vd25lciIsIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zenV0IiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InVzZXIifQ.F00__esDvZ9xTE6y42p92cBUj9QDdwQjYR_x8qVan4l3vicefQsfBunGZ72zhPQMu0RlLMD7zDQ0YcGl5Zei-WYB4RfLQqEcwxoGvJUABdEdLKOcYBy1LFtiRyk37kroLwCKZnzy5FTZ-LJceVwLk6B8lglDLgwd-LiRDSjFG-zHw-BvARo6eXe6FUdnc4viGifrgCRL0Ef8uS-tO1LgiZBAupDLIc7lZ4_KUXYmfraXVy0tT_7gvCkkQ-0m0xQJEcrNEp05T0KeqQuwr7B_IcASBSDidiYpMDtxLVmv3XoXEkpZUY1Qle3L7xcIhJLh0bZTu37tVgz73VzwLyBlww
 ###
 GET localhost:8080/welcome
 
-###
-GET localhost:8080/roles
-Authorization: Bearer {{token}}
-
-###
-GET localhost:8080/hello
-Authorization: Bearer {{token}}
-
-###
-POST localhost:8080/hello
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-{
-    "message": "test"
-}
-
-###
-POST localhost:8080/qualifications
+### 1. Create Qualification - Make sure to have a valid token
+POST http://localhost:8080/qualifications
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -29,8 +11,8 @@ Content-Type: application/json
   "skill": "Java"
 }
 
-###
-POST localhost:8080/employee
+### 2. Create Employee
+POST http://localhost:8080/employee
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -39,25 +21,75 @@ Content-Type: application/json
   "lastName": "Doe",
   "email": "john.doe@example.com",
   "department": "IT",
-  "qualificationIds": [1]
+  "qualificationIds": [
+    1
+  ]
 }
 
-###
-GET localhost:8080/employee
-Authorization: Bearer {{token}}
-
-###
-GET localhost:8080/employee/1
-Authorization: Bearer {{token}}
-
-###
-POST localhost:8080/projects
+### 3. Create Customer
+POST http://localhost:8080/customer
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-    "name": "New Website Development",
-    "startDate": "2025-01-15",
-    "endDate": "2025-06-30",
-    "employeeIds": [1]
+  "name": "ACME Corp"
 }
+
+### 4. Create Project 1
+POST http://localhost:8080/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Project Alpha",
+  "projectManager": 1,
+  "customer": 1,
+  "startDate": "2024-01-15",
+  "endDate": "2024-06-30",
+  "employeeIds": [
+    1
+  ]
+}
+
+### 5. Create Project 2
+POST http://localhost:8080/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Project Beta",
+  "projectManager": 1,
+  "customer": 1,
+  "startDate": "2024-02-15",
+  "endDate": "2024-07-30",
+  "employeeIds": [
+    1
+  ]
+}
+
+### Test Pagination - Get first page (50 items)
+GET http://localhost:8080/projects?page=0&size=50
+Authorization: Bearer {{token}}
+
+### Test Pagination - Get second page
+GET http://localhost:8080/projects?page=1&size=50
+Authorization: Bearer {{token}}
+
+### Test Filter by Manager
+GET http://localhost:8080/projects?managerId=1
+Authorization: Bearer {{token}}
+
+### Test Filter by Customer
+GET http://localhost:8080/projects?customerId=1
+Authorization: Bearer {{token}}
+
+### Test Filter by both Manager and Customer
+GET http://localhost:8080/projects?managerId=1&customerId=1
+Authorization: Bearer {{token}}
+
+### Test Unauthorized Access (should return 401)
+GET http://localhost:8080/projects
+
+### Test with invalid token (should return 401)
+GET http://localhost:8080/projects
+Authorization: Bearer invalid_token
