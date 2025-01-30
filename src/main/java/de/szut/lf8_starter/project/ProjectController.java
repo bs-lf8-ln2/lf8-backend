@@ -1,9 +1,8 @@
 package de.szut.lf8_starter.project;
 
+import de.szut.lf8_starter.employee.EmployeeEntity;
 import de.szut.lf8_starter.exceptionHandling.ResourceNotFoundException;
-import de.szut.lf8_starter.project.dto.ProjectCreateDto;
-import de.szut.lf8_starter.project.dto.ProjectGetDto;
-import de.szut.lf8_starter.project.dto.ProjectUpdateDto;
+import de.szut.lf8_starter.project.dto.*;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -20,8 +19,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController
@@ -50,7 +49,7 @@ public class ProjectController implements ProjectControllerOpenAPI {
             @RequestParam(required = false) Long managerId,
             @RequestParam(required = false) Long customerId) {
         logger.info("GET request received for all projects");
-        
+
         Pageable pageable = PageRequest.of(page, Math.min(size, 50), Sort.by(Sort.Direction.DESC, "createdAt"));
         return this.service
                 .readAll(managerId, customerId, pageable)
@@ -98,6 +97,64 @@ public class ProjectController implements ProjectControllerOpenAPI {
             logger.error("Error getting project: ", e);
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Project not found with id: " + id);
         }
+    }
+
+    @PostMapping("/{projectId}/add-employee")
+    public ResponseEntity<?> addEmployeeToProject(
+            @PathVariable Long projectId,
+            @RequestBody @Valid AddEmployeeToProjectDto dto) {
+
+        logger.info("Adding employee {} to project {} with qualification {}",
+                dto.getEmployeeId(), projectId, dto.getQualification());
+
+        try {
+            ProjectEntity updatedProject = service.addEmployeeToProject(
+                    projectId,
+                    dto.getEmployeeId(),
+                    dto.getQualification()
+            );
+            return ResponseEntity.ok(projectMapper.mapToGetDto(updatedProject));
+
+        } catch (ResourceNotFoundException e) {
+            logger.error("Resource not found: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(e.getMessage());
+
+        } catch (IllegalStateException e) {
+            logger.error("Invalid state: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(e.getMessage());
+
+        } catch (IllegalArgumentException e) {
+            logger.error("Invalid argument: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(e.getMessage());
+
+        } catch (Exception e) {
+            logger.error("Unexpected error while adding employee to project", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("An unexpected error occurred");
+        }
+    }
+
+    @GetMapping("/{projectId}/employees")
+    public ProjectEmployeesDto getProjectEmployees(@PathVariable Long projectId) {
+        logger.info("GET request received for employees of project id: {}", projectId);
+
+        ProjectEntity project = this.service.getProjectById(projectId);
+        Set<EmployeeEntity> employees = this.service.getProjectEmployees(projectId);
+
+        Set<ProjectEmployeesDto.EmployeeRoleDto> employeeDtos = employees.stream()
+                .map(employee -> new ProjectEmployeesDto.EmployeeRoleDto(
+                        employee.getId(),
+                        employee.getQualifications().stream()
+                                .map(q -> q.getSkill())
+                                .findFirst()
+                                .orElse("Unknown")
+                ))
+                .collect(Collectors.toSet());
+
+        return new ProjectEmployeesDto(project.getId(), project.getName(), employeeDtos);
     }
 
     @DeleteMapping("/{id}/employees/{employeeId}")
