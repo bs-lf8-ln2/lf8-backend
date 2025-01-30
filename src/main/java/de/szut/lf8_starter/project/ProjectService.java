@@ -1,12 +1,13 @@
 package de.szut.lf8_starter.project;
 
 import de.szut.lf8_starter.employee.EmployeeEntity;
+import de.szut.lf8_starter.employee.EmployeeRepository;
 import de.szut.lf8_starter.employee.EmployeeService;
+import de.szut.lf8_starter.exceptionHandling.EmployeeNotAvailableException;
 import de.szut.lf8_starter.exceptionHandling.ProjectNameAlreadyExistsException;
 import de.szut.lf8_starter.exceptionHandling.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -20,13 +21,14 @@ import java.util.Set;
 @Transactional
 public class ProjectService {
     private final ProjectRepository projectRepository;
+    private final EmployeeRepository employeeRepository;
+    private final EmployeeService employeeService;
     private static final Logger logger = LoggerFactory.getLogger(ProjectService.class);
 
-    @Autowired
-    private EmployeeService employeeService;
-
-    public ProjectService(ProjectRepository repository) {
-        this.projectRepository = repository;
+    public ProjectService(ProjectRepository projectRepository, EmployeeRepository employeeRepository, EmployeeService employeeService) {
+        this.projectRepository = projectRepository;
+        this.employeeRepository = employeeRepository;
+        this.employeeService = employeeService;
     }
 
     public ProjectEntity create(ProjectEntity projectEntity) {
@@ -137,7 +139,8 @@ public class ProjectService {
         logger.info("Fetching employees for project with id: {}", projectId);
         ProjectEntity project = getProjectById(projectId);
         return project.getEmployees();
-  }
+    }
+
     public void removeEmployeeFromProject(Long id, Long employeeId) {
         logger.info("Attempting to remove employee with id: {} from project with id: {}", employeeId, id);
 
@@ -173,5 +176,22 @@ public class ProjectService {
 
         projectRepository.delete(project);
         logger.info("Deleted project with ID: {}", projectId);
+    }
+
+    @Transactional
+    public ProjectEntity addEmployeeToProject(String name, Long employeeId) {
+        ProjectEntity project = projectRepository.findByName(name)
+                .orElseThrow(() -> new ResourceNotFoundException("Project not found"));
+
+        // Check employee availability
+        if (!employeeService.isEmployeeAvailable(employeeId)) {
+            throw new EmployeeNotAvailableException("Employee is not available for this project");
+        }
+
+        EmployeeEntity employee = employeeRepository.findById(employeeId)
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not found"));
+
+        project.getEmployees().add(employee);
+        return projectRepository.save(project);
     }
 }

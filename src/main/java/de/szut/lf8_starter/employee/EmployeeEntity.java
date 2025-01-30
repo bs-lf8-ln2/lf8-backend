@@ -1,12 +1,14 @@
 package de.szut.lf8_starter.employee;
 
 import de.szut.lf8_starter.qualification.QualificationEntity;
+import de.szut.lf8_starter.project.ProjectEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.Set;
+import java.util.HashSet;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,6 +25,9 @@ public class EmployeeEntity {
     private String lastName;
     private String email;
     private String department;
+
+    @ManyToMany(mappedBy = "employees")
+    private Set<ProjectEntity> projects = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
