@@ -8,15 +8,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 
-/**
- * A fast slice test will only start jpa context.
- * <p>
- * To use other context beans use org.springframework.context.annotation.@Import annotation.
- */
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("it")
@@ -38,8 +34,33 @@ public class AbstractIntegrationTest {
     @Autowired
     protected ProjectRepository projectRepository;
 
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    /**
+     * We have to fully reset the tables for each test, deleteAll() does not work because of foreign key constraints.
+     */
     @BeforeEach
     void setUp() {
-        helloRepository.deleteAll();
+        // Disable foreign key checks temporarily
+        jdbcTemplate.execute("SET CONSTRAINTS ALL DEFERRED");
+
+        // Truncate all tables and reset sequences
+        jdbcTemplate.execute("TRUNCATE TABLE project_employees CASCADE");
+        jdbcTemplate.execute("TRUNCATE TABLE project CASCADE");
+        jdbcTemplate.execute("TRUNCATE TABLE employee_qualifications CASCADE");
+        jdbcTemplate.execute("TRUNCATE TABLE employee CASCADE");
+        jdbcTemplate.execute("TRUNCATE TABLE qualification CASCADE");
+        jdbcTemplate.execute("TRUNCATE TABLE hello CASCADE");
+        jdbcTemplate.execute("TRUNCATE TABLE customer CASCADE");
+
+        // Reset sequences
+        jdbcTemplate.execute("ALTER SEQUENCE project_id_seq RESTART WITH 1");
+        jdbcTemplate.execute("ALTER SEQUENCE employee_id_seq RESTART WITH 1");
+        jdbcTemplate.execute("ALTER SEQUENCE qualification_id_seq RESTART WITH 1");
+        jdbcTemplate.execute("ALTER SEQUENCE customer_id_seq RESTART WITH 1");
+
+        // Re-enable foreign key checks
+        jdbcTemplate.execute("SET CONSTRAINTS ALL IMMEDIATE");
     }
 }
