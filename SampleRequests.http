@@ -1,4 +1,4 @@
-@token = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzUFQ0dldiNno5MnlQWk1EWnBqT1U0RjFVN0lwNi1ELUlqQWVGczJPbGU0In0.eyJleHAiOjE3MzgyMzI1ODcsImlhdCI6MTczODIyODk4NywianRpIjoiOWIwYTc2YTAtMWMwYS00MjM0LWIxMjgtMzZmODc5NTgwYjcwIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5zenV0LmRldi9hdXRoL3JlYWxtcy9zenV0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjU1NDZjZDIxLTk4NTQtNDMyZi1hNDY3LTRkZTNlZWRmNTg4OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImVtcGxveWVlLW1hbmFnZW1lbnQtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiIwZDE3ZThmNC1iZjhhLTQ2MjUtOTQ5OS1jNTJkOGQ4ZTQwYmYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDIwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicHJvZHVjdF9vd25lciIsIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zenV0IiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InVzZXIifQ.F00__esDvZ9xTE6y42p92cBUj9QDdwQjYR_x8qVan4l3vicefQsfBunGZ72zhPQMu0RlLMD7zDQ0YcGl5Zei-WYB4RfLQqEcwxoGvJUABdEdLKOcYBy1LFtiRyk37kroLwCKZnzy5FTZ-LJceVwLk6B8lglDLgwd-LiRDSjFG-zHw-BvARo6eXe6FUdnc4viGifrgCRL0Ef8uS-tO1LgiZBAupDLIc7lZ4_KUXYmfraXVy0tT_7gvCkkQ-0m0xQJEcrNEp05T0KeqQuwr7B_IcASBSDidiYpMDtxLVmv3XoXEkpZUY1Qle3L7xcIhJLh0bZTu37tVgz73VzwLyBlww
+@token = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzUFQ0dldiNno5MnlQWk1EWnBqT1U0RjFVN0lwNi1ELUlqQWVGczJPbGU0In0.eyJleHAiOjE3MzkxMTEyMDAsImlhdCI6MTczOTEwNzYwMCwianRpIjoiNjU4NTBjZDAtYmNmYy00ODgwLWFkY2QtOWFiYzAxNDUzZjMyIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5zenV0LmRldi9hdXRoL3JlYWxtcy9zenV0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjU1NDZjZDIxLTk4NTQtNDMyZi1hNDY3LTRkZTNlZWRmNTg4OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImVtcGxveWVlLW1hbmFnZW1lbnQtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiJjNjNjMDYwOC03MmFkLTRjYzAtOTdiMi00YTQ1NWRmNzk2MzUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDIwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicHJvZHVjdF9vd25lciIsIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zenV0IiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InVzZXIifQ.A3pmZaRNik-sNoehbwiNdB7aQew2Pz0BTXCZNSSz7bKLVAxxU4yR4C05no_S9rWEScFCUkLIQFZF6oePkKuQim6v30rtxCVRzh00kMjKFA_KrEpLuYYV67HT2yHwc_U5mrU2bLETkPnIIx86LOwa-xU9eDkpk4Saw9NlCW9f3Jast9mGy21HROpYNmxBMH53l3JMBx0zK9zVShr-YnfIwlYszbunVwCXfNeu3jFERtRArnCnOlvJUgu588AiGkE8MyZ2DLpoTmR2ZxxJiptsPRordGCZ5WF8psYt0jAB2-dWVpSnogeIS0SzfyYKjj4OqZO4nAe9dyxcVfCF2KoaRA
 ###
 GET localhost:8080/welcome
 
@@ -93,3 +93,62 @@ GET http://localhost:8080/projects
 ### Test with invalid token (should return 401)
 GET http://localhost:8080/projects
 Authorization: Bearer invalid_token
+
+
+
+
+
+
+
+
+
+
+### Add Employee to Project Beta
+POST http://localhost:8080/projects/Project Beta/employees
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "employeeId": 1,
+  "qualification": "Java"
+}
+
+### Test 1: Add employee to project (Success case)
+POST http://localhost:8080/projects/Project Alpha/employees
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "employeeId": 1,
+  "qualification": "Java"
+}
+
+### Test 2: Add non-existent employee (Should fail)
+POST http://localhost:8080/projects/Project Alpha/employees
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "employeeId": 999,
+  "qualification": "Java"
+}
+
+### Test 3: Add employee with wrong qualification (Should fail)
+POST http://localhost:8080/projects/Project Alpha/employees
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "employeeId": 1,
+  "qualification": "Python"
+}
+
+### Test 4: Add employee to non-existent project (Should fail)
+POST http://localhost:8080/projects/NonExistentProject/employees
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "employeeId": 1,
+  "qualification": "Java"
+}

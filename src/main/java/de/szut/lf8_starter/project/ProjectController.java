@@ -19,6 +19,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -28,11 +29,13 @@ import java.util.stream.Collectors;
 public class ProjectController implements ProjectControllerOpenAPI {
     private final ProjectService service;
     private final ProjectMapper projectMapper;
+    private final ProjectRepository repository;
     private static final Logger logger = LoggerFactory.getLogger(ProjectController.class);
 
-    public ProjectController(ProjectService service, ProjectMapper projectMapper) {
+    public ProjectController(ProjectService service, ProjectMapper projectMapper, ProjectRepository repository) {
         this.service = service;
         this.projectMapper = projectMapper;
+        this.repository = repository;
     }
 
     @PostMapping
@@ -169,5 +172,87 @@ public class ProjectController implements ProjectControllerOpenAPI {
             logger.error("Project or employee not found with id: {}", id);
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
+    }
+
+    @PostMapping("/{projectName}/employees")
+    public ResponseEntity<?> addEmployeeToProjectByName(
+            @PathVariable String projectName,
+            @RequestBody @Valid AddEmployeeToProjectDto dto) {
+
+        logger.info("Adding employee {} to project '{}' with qualification {}",
+                dto.getEmployeeId(), projectName, dto.getQualification());
+
+        try {
+            // Find project by name first
+            ProjectEntity project = service.findByName(projectName);
+            
+            ProjectEntity updatedProject = service.addEmployeeToProject(
+                    project.getId(),
+                    dto.getEmployeeId(),
+                    dto.getQualification()
+            );
+            return ResponseEntity.ok(projectMapper.mapToGetDto(updatedProject));
+
+        } catch (ResourceNotFoundException e) {
+            logger.error("Resource not found: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(e.getMessage());
+
+        } catch (IllegalStateException e) {
+            logger.error("Invalid state: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(e.getMessage());
+
+        } catch (IllegalArgumentException e) {
+            logger.error("Invalid argument: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(e.getMessage());
+
+        } catch (Exception e) {
+            logger.error("Unexpected error while adding employee to project", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("An unexpected error occurred");
+        }
+    }
+
+    @GetMapping("/debug/all")
+    public ResponseEntity<?> getAllProjectsDebug() {
+        try {
+            logger.info("Debug: Getting all projects");
+            List<Map<String, Object>> debugInfo = repository.findAll().stream()
+                .map(p -> {
+                    Map<String, Object> info = new HashMap<>();
+                    info.put("id", p.getId());
+                    info.put("name", p.getName());
+                    info.put("customerId", p.getCustomer() != null ? p.getCustomer().getId() : null);
+                    info.put("managerId", p.getProjectManager() != null ? p.getProjectManager().getId() : null);
+                    return info;
+                })
+                .collect(Collectors.toList());
+            
+            logger.info("Found {} projects", debugInfo.size());
+            return ResponseEntity.ok(debugInfo);
+        } catch (Exception e) {
+            logger.error("Error in debug endpoint", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body("Error: " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/debug/project-employees")
+    public ResponseEntity<?> debugProjectEmployees() {
+        Map<String, Object> debug = new HashMap<>();
+        
+        repository.findAll().forEach(project -> {
+            Map<String, Object> projectInfo = new HashMap<>();
+            projectInfo.put("id", project.getId());
+            projectInfo.put("name", project.getName());
+            projectInfo.put("employeeIds", project.getEmployees().stream()
+                .map(EmployeeEntity::getId)
+                .collect(Collectors.toList()));
+            debug.put(project.getName(), projectInfo);
+        });
+        
+        return ResponseEntity.ok(debug);
     }
 }
