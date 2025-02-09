@@ -194,4 +194,13 @@ public class ProjectService {
         project.getEmployees().add(employee);
         return projectRepository.save(project);
     }
+
+    public ProjectEntity findByName(String name) {
+        logger.info("Finding project by name: {}", name);
+        return projectRepository.findByNameIgnoreCase(name)
+                .orElseThrow(() -> {
+                    logger.error("Project not found with name: {}", name);
+                    return new ResourceNotFoundException("Project not found with name: " + name);
+                });
+    }
 }

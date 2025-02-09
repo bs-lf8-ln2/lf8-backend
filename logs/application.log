@@ -1,0 +1,752 @@
+2025-02-04T20:38:47.668+01:00  INFO 20032 --- [lf8_starter] [main] d.s.lf8_starter.Lf8StarterApplication    : Starting Lf8StarterApplication using Java 22.0.1 with PID 20032 (C:\Users\a.aalaou\Desktop\LF8\lf8-backend\build\classes\java\main started by a.aalaou in C:\Users\a.aalaou\Desktop\LF8\lf8-backend)
+2025-02-04T20:38:47.670+01:00 DEBUG 20032 --- [lf8_starter] [main] d.s.lf8_starter.Lf8StarterApplication    : Running with Spring Boot v3.3.3, Spring v6.1.12
+2025-02-04T20:38:47.670+01:00  INFO 20032 --- [lf8_starter] [main] d.s.lf8_starter.Lf8StarterApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-02-04T20:38:48.763+01:00  INFO 20032 --- [lf8_starter] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-04T20:38:48.843+01:00  INFO 20032 --- [lf8_starter] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 5 JPA repository interfaces.
+2025-02-04T20:38:49.547+01:00  INFO 20032 --- [lf8_starter] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-04T20:38:49.563+01:00  INFO 20032 --- [lf8_starter] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-04T20:38:49.563+01:00  INFO 20032 --- [lf8_starter] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-02-04T20:38:49.627+01:00  INFO 20032 --- [lf8_starter] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-04T20:38:49.628+01:00  INFO 20032 --- [lf8_starter] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1896 ms
+2025-02-04T20:38:49.834+01:00  INFO 20032 --- [lf8_starter] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-04T20:38:49.914+01:00  INFO 20032 --- [lf8_starter] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-02-04T20:38:49.971+01:00  INFO 20032 --- [lf8_starter] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-04T20:38:50.349+01:00  INFO 20032 --- [lf8_starter] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-04T20:38:50.379+01:00  INFO 20032 --- [lf8_starter] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-04T20:38:50.579+01:00  INFO 20032 --- [lf8_starter] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1e6cb932
+2025-02-04T20:38:50.580+01:00  INFO 20032 --- [lf8_starter] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-04T20:38:51.741+01:00  INFO 20032 --- [lf8_starter] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-04T20:38:52.116+01:00  INFO 20032 --- [lf8_starter] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-04T20:38:52.528+01:00  INFO 20032 --- [lf8_starter] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-04T20:38:53.262+01:00 DEBUG 20032 --- [lf8_starter] [main] o.s.web.client.RestTemplate              : HTTP GET https://keycloak.szut.dev/auth/realms/szut/.well-known/openid-configuration
+2025-02-04T20:38:53.279+01:00 DEBUG 20032 --- [lf8_starter] [main] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-02-04T20:38:53.587+01:00 DEBUG 20032 --- [lf8_starter] [main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-02-04T20:38:53.588+01:00 DEBUG 20032 --- [lf8_starter] [main] o.s.web.client.RestTemplate              : Reading to [java.util.Map<java.lang.String, java.lang.Object>]
+2025-02-04T20:38:53.784+01:00  WARN 20032 --- [lf8_starter] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-04T20:38:53.804+01:00 DEBUG 20032 --- [lf8_starter] [main] swordEncoderAuthenticationManagerBuilder : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-02-04T20:38:53.990+01:00 DEBUG 20032 --- [lf8_starter] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 32 mappings in 'requestMappingHandlerMapping'
+2025-02-04T20:38:54.081+01:00 DEBUG 20032 --- [lf8_starter] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-02-04T20:38:54.152+01:00 DEBUG 20032 --- [lf8_starter] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, BearerTokenAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-02-04T20:38:54.277+01:00 DEBUG 20032 --- [lf8_starter] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-02-04T20:38:54.334+01:00 DEBUG 20032 --- [lf8_starter] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-02-04T20:38:54.511+01:00  INFO 20032 --- [lf8_starter] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-04T20:38:54.520+01:00  INFO 20032 --- [lf8_starter] [main] d.s.lf8_starter.Lf8StarterApplication    : Started Lf8StarterApplication in 7.317 seconds (process running for 9.035)
+2025-02-04T20:39:37.339+01:00  INFO 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-04T20:39:37.339+01:00  INFO 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-04T20:39:37.339+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-02-04T20:39:37.339+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-02-04T20:39:37.339+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-02-04T20:39:37.339+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@13a34a70
+2025-02-04T20:39:37.339+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@46fdb4d
+2025-02-04T20:39:37.339+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-02-04T20:39:37.339+01:00  INFO 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-02-04T20:39:37.370+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /projects/Project Alpha/employees
+2025-02-04T20:39:37.387+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : HTTP GET https://keycloak.szut.dev/auth/realms/szut/.well-known/openid-configuration
+2025-02-04T20:39:37.394+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-02-04T20:39:37.466+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2025-02-04T20:39:37.466+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Reading to [java.util.Map<java.lang.String, java.lang.Object>]
+2025-02-04T20:39:37.516+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : HTTP GET https://keycloak.szut.dev/auth/realms/szut/protocol/openid-connect/certs
+2025-02-04T20:39:37.531+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-02-04T20:39:37.551+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2025-02-04T20:39:37.551+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+2025-02-04T20:39:37.666+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:39:37.666+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:39:37.666+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /projects/Project Alpha/employees
+2025-02-04T20:39:37.681+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/projects/Project%20Alpha/employees", parameters={}
+2025-02-04T20:39:37.681+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Failed to complete request: java.lang.IllegalStateException: Ambiguous handler methods mapped for '/projects/Project%20Alpha/employees': {public org.springframework.http.ResponseEntity de.szut.lf8_starter.project.ProjectController.addEmployeeToProject(java.lang.Long,de.szut.lf8_starter.project.dto.AddEmployeeToProjectDto), public org.springframework.http.ResponseEntity de.szut.lf8_starter.project.ProjectController.addEmployeeToProjectByName(java.lang.String,de.szut.lf8_starter.project.dto.AddEmployeeToProjectByNameDto)}
+2025-02-04T20:39:37.681+01:00 ERROR 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalStateException: Ambiguous handler methods mapped for '/projects/Project%20Alpha/employees': {public org.springframework.http.ResponseEntity de.szut.lf8_starter.project.ProjectController.addEmployeeToProject(java.lang.Long,de.szut.lf8_starter.project.dto.AddEmployeeToProjectDto), public org.springframework.http.ResponseEntity de.szut.lf8_starter.project.ProjectController.addEmployeeToProjectByName(java.lang.String,de.szut.lf8_starter.project.dto.AddEmployeeToProjectByNameDto)}] with root cause
+
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/projects/Project%20Alpha/employees': {public org.springframework.http.ResponseEntity de.szut.lf8_starter.project.ProjectController.addEmployeeToProject(java.lang.Long,de.szut.lf8_starter.project.dto.AddEmployeeToProjectDto), public org.springframework.http.ResponseEntity de.szut.lf8_starter.project.ProjectController.addEmployeeToProjectByName(java.lang.String,de.szut.lf8_starter.project.dto.AddEmployeeToProjectByNameDto)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:431) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:382) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:127) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:507) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1284) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1065) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.28.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.28.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter.doFilterInternal(BearerTokenAuthenticationFilter.java:145) ~[spring-security-oauth2-resource-server-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2025-02-04T20:39:37.704+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-02-04T20:39:37.704+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /error
+2025-02-04T20:39:37.704+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2025-02-04T20:39:37.704+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T20:39:37.729+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:39:37.729+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 20:39:37 CET 2025, status=500, error=Internal Server Error, path=/projects/Pro (truncated)...]
+2025-02-04T20:39:37.761+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2025-02-04T20:40:54.854+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /projects/Project Alpha/employees
+2025-02-04T20:40:54.869+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:40:54.869+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:40:54.869+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /projects/Project Alpha/employees
+2025-02-04T20:40:54.869+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/projects/Project%20Alpha/employees", parameters={}
+2025-02-04T20:40:54.869+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Failed to complete request: java.lang.IllegalStateException: Ambiguous handler methods mapped for '/projects/Project%20Alpha/employees': {public org.springframework.http.ResponseEntity de.szut.lf8_starter.project.ProjectController.addEmployeeToProject(java.lang.Long,de.szut.lf8_starter.project.dto.AddEmployeeToProjectDto), public org.springframework.http.ResponseEntity de.szut.lf8_starter.project.ProjectController.addEmployeeToProjectByName(java.lang.String,de.szut.lf8_starter.project.dto.AddEmployeeToProjectByNameDto)}
+2025-02-04T20:40:54.869+01:00 ERROR 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalStateException: Ambiguous handler methods mapped for '/projects/Project%20Alpha/employees': {public org.springframework.http.ResponseEntity de.szut.lf8_starter.project.ProjectController.addEmployeeToProject(java.lang.Long,de.szut.lf8_starter.project.dto.AddEmployeeToProjectDto), public org.springframework.http.ResponseEntity de.szut.lf8_starter.project.ProjectController.addEmployeeToProjectByName(java.lang.String,de.szut.lf8_starter.project.dto.AddEmployeeToProjectByNameDto)}] with root cause
+
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/projects/Project%20Alpha/employees': {public org.springframework.http.ResponseEntity de.szut.lf8_starter.project.ProjectController.addEmployeeToProject(java.lang.Long,de.szut.lf8_starter.project.dto.AddEmployeeToProjectDto), public org.springframework.http.ResponseEntity de.szut.lf8_starter.project.ProjectController.addEmployeeToProjectByName(java.lang.String,de.szut.lf8_starter.project.dto.AddEmployeeToProjectByNameDto)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:431) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:382) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:127) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:507) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1284) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1065) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.28.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.28.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter.doFilterInternal(BearerTokenAuthenticationFilter.java:145) ~[spring-security-oauth2-resource-server-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2025-02-04T20:40:54.869+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-02-04T20:40:54.869+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /error
+2025-02-04T20:40:54.869+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2025-02-04T20:40:54.869+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T20:40:54.869+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:40:54.869+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 20:40:54 CET 2025, status=500, error=Internal Server Error, path=/projects/Pro (truncated)...]
+2025-02-04T20:40:54.885+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2025-02-04T20:41:16.179+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /projects/byname/Project Alpha/employees
+2025-02-04T20:41:16.194+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:41:16.194+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:41:16.194+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /projects/byname/Project Alpha/employees
+2025-02-04T20:41:16.194+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/projects/byname/Project%20Alpha/employees", parameters={}
+2025-02-04T20:41:16.194+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T20:41:16.194+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T20:41:16.194+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/byname/Project%20Alpha/employees.]
+2025-02-04T20:41:16.194+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T20:41:16.194+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-02-04T20:41:16.194+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /error
+2025-02-04T20:41:16.194+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2025-02-04T20:41:16.194+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T20:41:16.194+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:41:16.210+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 20:41:16 CET 2025, status=404, error=Not Found, path=/projects/byname/Project% (truncated)...]
+2025-02-04T20:41:16.210+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T20:42:44.920+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /projects/byname/Project Alpha/employees
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /projects/byname/Project Alpha/employees
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/projects/byname/Project%20Alpha/employees", parameters={}
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/byname/Project%20Alpha/employees.]
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /error
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 20:42:44 CET 2025, status=404, error=Not Found, path=/projects/byname/Project% (truncated)...]
+2025-02-04T20:42:44.926+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T20:44:23.757+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /projects/byname/Project Alpha/employees
+2025-02-04T20:44:23.772+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:44:23.772+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:44:23.772+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /projects/byname/Project Alpha/employees
+2025-02-04T20:44:23.787+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/projects/byname/Project%20Alpha/employees", parameters={}
+2025-02-04T20:44:23.787+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T20:44:23.802+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T20:44:23.802+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/byname/Project%20Alpha/employees.]
+2025-02-04T20:44:23.802+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T20:44:23.802+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-02-04T20:44:23.802+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /error
+2025-02-04T20:44:23.802+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2025-02-04T20:44:23.802+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T20:44:23.818+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:44:23.818+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 20:44:23 CET 2025, status=404, error=Not Found, path=/projects/byname/Project% (truncated)...]
+2025-02-04T20:44:23.818+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T20:50:43.339+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /projects/byname/Project Alpha/employees
+2025-02-04T20:50:43.372+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.client.RestTemplate              : HTTP GET https://keycloak.szut.dev/auth/realms/szut/protocol/openid-connect/certs
+2025-02-04T20:50:43.395+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-02-04T20:50:43.553+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.client.RestTemplate              : Response 200 OK
+2025-02-04T20:50:43.560+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+2025-02-04T20:50:43.560+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:50:43.560+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:50:43.560+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /projects/byname/Project Alpha/employees
+2025-02-04T20:50:43.560+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/projects/byname/Project%20Alpha/employees", parameters={}
+2025-02-04T20:50:43.569+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T20:50:43.569+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T20:50:43.569+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/byname/Project%20Alpha/employees.]
+2025-02-04T20:50:43.569+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T20:50:43.569+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-02-04T20:50:43.569+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /error
+2025-02-04T20:50:43.569+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2025-02-04T20:50:43.569+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T20:50:43.569+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:50:43.569+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 20:50:43 CET 2025, status=404, error=Not Found, path=/projects/byname/Project% (truncated)...]
+2025-02-04T20:50:43.579+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T20:51:46.603+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /projects/byname/Project Alpha/employees
+2025-02-04T20:51:46.603+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:51:46.603+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:51:46.603+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /projects/byname/Project Alpha/employees
+2025-02-04T20:51:46.618+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/projects/byname/Project%20Alpha/employees", parameters={}
+2025-02-04T20:51:46.618+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T20:51:46.620+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T20:51:46.620+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/byname/Project%20Alpha/employees.]
+2025-02-04T20:51:46.620+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T20:51:46.620+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-02-04T20:51:46.620+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /error
+2025-02-04T20:51:46.620+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2025-02-04T20:51:46.620+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T20:51:46.620+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:51:46.620+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 20:51:46 CET 2025, status=404, error=Not Found, path=/projects/byname/Project% (truncated)...]
+2025-02-04T20:51:46.620+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T20:52:12.833+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /projects/byname/Project Alpha/employees
+2025-02-04T20:52:12.833+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:52:12.837+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:52:12.837+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /projects/byname/Project Alpha/employees
+2025-02-04T20:52:12.837+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/projects/byname/Project%20Alpha/employees", parameters={}
+2025-02-04T20:52:12.837+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T20:52:12.837+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T20:52:12.837+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/byname/Project%20Alpha/employees.]
+2025-02-04T20:52:12.837+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T20:52:12.837+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-02-04T20:52:12.837+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /error
+2025-02-04T20:52:12.837+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2025-02-04T20:52:12.837+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T20:52:12.837+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:52:12.837+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 20:52:12 CET 2025, status=404, error=Not Found, path=/projects/byname/Project% (truncated)...]
+2025-02-04T20:52:12.846+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T20:53:12.503+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /qualifications
+2025-02-04T20:53:12.509+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:53:12.510+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:53:12.510+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /qualifications
+2025-02-04T20:53:12.511+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/qualifications", parameters={}
+2025-02-04T20:53:12.511+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to de.szut.lf8_starter.qualification.QualificationController#create(QualificationCreateDto)
+2025-02-04T20:53:13.220+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [de.szut.lf8_starter.qualification.dto.QualificationCreateDto@7388f483]
+2025-02-04T20:53:13.588+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:53:13.589+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [de.szut.lf8_starter.qualification.dto.QualificationGetDto@ab9247f]
+2025-02-04T20:53:13.596+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-02-04T20:53:13.693+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /employee
+2025-02-04T20:53:13.697+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:53:13.697+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:53:13.698+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /employee
+2025-02-04T20:53:13.699+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/employee", parameters={}
+2025-02-04T20:53:13.705+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to de.szut.lf8_starter.employee.EmployeeController#create(EmployeeCreateDto)
+2025-02-04T20:53:13.744+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [de.szut.lf8_starter.employee.dto.EmployeeCreateDto@41f46fed]
+2025-02-04T20:53:14.055+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:53:14.056+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [de.szut.lf8_starter.employee.dto.EmployeeGetDto@76a54a4b]
+2025-02-04T20:53:14.062+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-02-04T20:53:14.170+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /customer
+2025-02-04T20:53:14.175+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:53:14.177+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:53:14.177+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /customer
+2025-02-04T20:53:14.178+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/customer", parameters={}
+2025-02-04T20:53:14.178+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to de.szut.lf8_starter.customer.CustomerController#create(CustomerCreateDto)
+2025-02-04T20:53:14.183+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [de.szut.lf8_starter.customer.dto.CustomerCreateDto@85cedc6]
+2025-02-04T20:53:14.218+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:53:14.219+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [de.szut.lf8_starter.customer.dto.CustomerGetDto@5f739380]
+2025-02-04T20:53:14.221+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-02-04T20:53:14.441+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /projects
+2025-02-04T20:53:14.450+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-8] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:53:14.451+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-8] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:53:14.453+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /projects
+2025-02-04T20:53:14.454+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/projects", parameters={}
+2025-02-04T20:53:14.456+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to de.szut.lf8_starter.project.ProjectController#create(ProjectCreateDto)
+2025-02-04T20:53:14.555+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [de.szut.lf8_starter.project.dto.ProjectCreateDto@189f37bd]
+2025-02-04T20:53:15.051+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:53:15.051+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [de.szut.lf8_starter.project.dto.ProjectGetDto@2ea33775]
+2025-02-04T20:53:15.054+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-02-04T20:53:15.199+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /projects
+2025-02-04T20:53:15.202+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:53:15.203+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:53:15.203+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /projects
+2025-02-04T20:53:15.203+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/projects", parameters={}
+2025-02-04T20:53:15.204+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to de.szut.lf8_starter.project.ProjectController#create(ProjectCreateDto)
+2025-02-04T20:53:15.208+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [de.szut.lf8_starter.project.dto.ProjectCreateDto@314c3250]
+2025-02-04T20:53:15.292+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:53:15.293+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [de.szut.lf8_starter.project.dto.ProjectGetDto@71fc729d]
+2025-02-04T20:53:15.294+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-02-04T20:53:15.438+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /projects?page=0&size=50
+2025-02-04T20:53:15.454+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:53:15.455+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:53:15.462+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /projects?page=0&size=50
+2025-02-04T20:53:15.465+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/projects?page=0&size=50", parameters={masked}
+2025-02-04T20:53:15.466+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to de.szut.lf8_starter.project.ProjectController#findAll(int, int, Long, Long)
+2025-02-04T20:53:15.503+01:00  INFO 20032 --- [lf8_starter] [http-nio-8080-exec-10] d.s.l.project.ProjectController          : GET request received for all projects
+2025-02-04T20:53:15.642+01:00  WARN 20032 --- [lf8_starter] [http-nio-8080-exec-10] ration$PageModule$WarningLoggingModifier : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2025-02-04T20:53:15.645+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:53:15.649+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [Page 1 of 1 containing de.szut.lf8_starter.project.dto.ProjectGetDto instances]
+2025-02-04T20:53:15.663+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-02-04T20:53:15.763+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /projects?page=1&size=50
+2025-02-04T20:53:15.766+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:53:15.766+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:53:15.766+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /projects?page=1&size=50
+2025-02-04T20:53:15.767+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/projects?page=1&size=50", parameters={masked}
+2025-02-04T20:53:15.767+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to de.szut.lf8_starter.project.ProjectController#findAll(int, int, Long, Long)
+2025-02-04T20:53:15.768+01:00  INFO 20032 --- [lf8_starter] [http-nio-8080-exec-1] d.s.l.project.ProjectController          : GET request received for all projects
+2025-02-04T20:53:15.820+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:53:15.821+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [Page 2 of 1 containing UNKNOWN instances]
+2025-02-04T20:53:15.824+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-02-04T20:53:15.965+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /projects?managerId=1
+2025-02-04T20:53:15.968+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:53:15.968+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:53:15.969+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /projects?managerId=1
+2025-02-04T20:53:15.969+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/projects?managerId=1", parameters={masked}
+2025-02-04T20:53:15.970+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to de.szut.lf8_starter.project.ProjectController#findAll(int, int, Long, Long)
+2025-02-04T20:53:15.972+01:00  INFO 20032 --- [lf8_starter] [http-nio-8080-exec-6] d.s.l.project.ProjectController          : GET request received for all projects
+2025-02-04T20:53:16.033+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:53:16.035+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [Page 1 of 1 containing de.szut.lf8_starter.project.dto.ProjectGetDto instances]
+2025-02-04T20:53:16.038+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-02-04T20:53:16.145+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /projects?customerId=1
+2025-02-04T20:53:16.149+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:53:16.150+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:53:16.150+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /projects?customerId=1
+2025-02-04T20:53:16.150+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/projects?customerId=1", parameters={masked}
+2025-02-04T20:53:16.151+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to de.szut.lf8_starter.project.ProjectController#findAll(int, int, Long, Long)
+2025-02-04T20:53:16.153+01:00  INFO 20032 --- [lf8_starter] [http-nio-8080-exec-4] d.s.l.project.ProjectController          : GET request received for all projects
+2025-02-04T20:53:16.197+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:53:16.197+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [Page 1 of 1 containing de.szut.lf8_starter.project.dto.ProjectGetDto instances]
+2025-02-04T20:53:16.200+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-02-04T20:53:16.352+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /projects?managerId=1&customerId=1
+2025-02-04T20:53:16.355+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:53:16.356+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:53:16.357+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /projects?managerId=1&customerId=1
+2025-02-04T20:53:16.358+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/projects?managerId=1&customerId=1", parameters={masked}
+2025-02-04T20:53:16.358+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to de.szut.lf8_starter.project.ProjectController#findAll(int, int, Long, Long)
+2025-02-04T20:53:16.359+01:00  INFO 20032 --- [lf8_starter] [http-nio-8080-exec-5] d.s.l.project.ProjectController          : GET request received for all projects
+2025-02-04T20:53:16.397+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:53:16.397+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [Page 1 of 1 containing de.szut.lf8_starter.project.dto.ProjectGetDto instances]
+2025-02-04T20:53:16.400+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-02-04T20:53:16.580+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /projects
+2025-02-04T20:53:16.585+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-04T20:53:16.704+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.s.w.s.HttpSessionEventPublisher      : Publishing event: org.springframework.security.web.session.HttpSessionCreatedEvent[source=org.apache.catalina.session.StandardSessionFacade@30366ccf]
+2025-02-04T20:53:16.711+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.s.w.s.HttpSessionRequestCache        : Saved request http://localhost:8080/projects?continue to session
+2025-02-04T20:53:16.833+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /projects
+2025-02-04T20:53:16.835+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Failed to authenticate since the JWT was invalid
+2025-02-04T20:53:16.931+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /projects/byname/Project Alpha/employees
+2025-02-04T20:53:16.935+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T20:53:16.935+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T20:53:16.935+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /projects/byname/Project Alpha/employees
+2025-02-04T20:53:16.936+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/projects/byname/Project%20Alpha/employees", parameters={}
+2025-02-04T20:53:16.936+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T20:53:16.939+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T20:53:16.941+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/byname/Project%20Alpha/employees.]
+2025-02-04T20:53:16.941+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T20:53:16.942+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-02-04T20:53:16.943+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /error
+2025-02-04T20:53:16.943+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2025-02-04T20:53:16.943+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T20:53:16.945+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T20:53:16.945+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 20:53:16 CET 2025, status=404, error=Not Found, path=/projects/byname/Project% (truncated)...]
+2025-02-04T20:53:16.947+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T21:11:01.585+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /projects/byname/Project Alpha
+2025-02-04T21:11:01.672+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : HTTP GET https://keycloak.szut.dev/auth/realms/szut/protocol/openid-connect/certs
+2025-02-04T21:11:01.693+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-02-04T21:11:01.853+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2025-02-04T21:11:01.857+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+2025-02-04T21:11:01.875+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:11:01.885+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:11:01.886+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /projects/byname/Project Alpha
+2025-02-04T21:11:01.891+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/projects/byname/Project%20Alpha", parameters={}
+2025-02-04T21:11:01.894+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T21:11:01.998+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T21:11:02.007+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/byname/Project%20Alpha.]
+2025-02-04T21:11:02.013+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T21:11:02.020+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:11:02.020+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:11:02.020+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:11:02.021+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:11:02.046+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:11:02.052+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:11:02 CET 2025, status=404, error=Not Found, path=/projects/byname/Project% (truncated)...]
+2025-02-04T21:11:02.067+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T21:12:31.514+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /projects/test
+2025-02-04T21:12:31.519+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:12:31.520+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:12:31.521+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /projects/test
+2025-02-04T21:12:31.522+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/projects/test", parameters={}
+2025-02-04T21:12:31.523+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to de.szut.lf8_starter.project.ProjectController#getById(Long)
+2025-02-04T21:12:31.790+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public de.szut.lf8_starter.project.dto.ProjectGetDto de.szut.lf8_starter.project.ProjectController.getById(java.lang.Long): Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "test"
+2025-02-04T21:12:31.818+01:00  WARN 20032 --- [lf8_starter] [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "test"]
+2025-02-04T21:12:31.819+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-02-04T21:12:31.822+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:12:31.823+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:12:31.823+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:12:31.823+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:12:31.827+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:12:31.828+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:12:31 CET 2025, status=400, error=Bad Request, path=/projects/test}]
+2025-02-04T21:12:31.833+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2025-02-04T21:12:47.114+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /projects/byname/Project Alpha
+2025-02-04T21:12:47.119+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:12:47.119+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:12:47.119+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /projects/byname/Project Alpha
+2025-02-04T21:12:47.120+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/projects/byname/Project%20Alpha", parameters={}
+2025-02-04T21:12:47.123+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T21:12:47.148+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T21:12:47.150+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/byname/Project%20Alpha.]
+2025-02-04T21:12:47.151+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T21:12:47.152+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:12:47.152+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:12:47.153+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:12:47.153+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:12:47.155+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:12:47.155+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:12:47 CET 2025, status=404, error=Not Found, path=/projects/byname/Project% (truncated)...]
+2025-02-04T21:12:47.157+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T21:12:52.002+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /projects/test
+2025-02-04T21:12:52.006+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:12:52.007+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:12:52.007+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /projects/test
+2025-02-04T21:12:52.007+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/projects/test", parameters={}
+2025-02-04T21:12:52.008+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to de.szut.lf8_starter.project.ProjectController#getById(Long)
+2025-02-04T21:12:52.016+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public de.szut.lf8_starter.project.dto.ProjectGetDto de.szut.lf8_starter.project.ProjectController.getById(java.lang.Long): Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "test"
+2025-02-04T21:12:52.019+01:00  WARN 20032 --- [lf8_starter] [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "test"]
+2025-02-04T21:12:52.020+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-02-04T21:12:52.026+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:12:52.026+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:12:52.026+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:12:52.030+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:12:52.032+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:12:52.032+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:12:52 CET 2025, status=400, error=Bad Request, path=/projects/test}]
+2025-02-04T21:12:52.038+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2025-02-04T21:13:56.063+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /projects/status/test
+2025-02-04T21:13:56.068+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:13:56.068+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:13:56.068+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /projects/status/test
+2025-02-04T21:13:56.068+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/projects/status/test", parameters={}
+2025-02-04T21:13:56.070+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T21:13:56.097+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T21:13:56.098+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/status/test.]
+2025-02-04T21:13:56.098+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T21:13:56.099+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:13:56.099+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:13:56.099+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:13:56.103+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:13:56.105+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:13:56.106+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:13:56 CET 2025, status=404, error=Not Found, path=/projects/status/test}]
+2025-02-04T21:13:56.108+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T21:15:00.752+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/projects/status/test
+2025-02-04T21:15:00.772+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:15:00.774+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:15:00.775+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/projects/status/test
+2025-02-04T21:15:00.775+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/projects/status/test", parameters={}
+2025-02-04T21:15:00.777+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T21:15:00.796+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T21:15:00.796+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/projects/status/test.]
+2025-02-04T21:15:00.796+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T21:15:00.796+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:15:00.796+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:15:00.796+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:15:00.796+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:15:00.811+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:15:00.811+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:15:00 CET 2025, status=404, error=Not Found, path=/api/projects/status/test (truncated)...]
+2025-02-04T21:15:00.827+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T21:16:57.417+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /projects/status/test
+2025-02-04T21:16:57.433+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : HTTP GET https://keycloak.szut.dev/auth/realms/szut/protocol/openid-connect/certs
+2025-02-04T21:16:57.449+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-02-04T21:16:57.779+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2025-02-04T21:16:57.781+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+2025-02-04T21:16:57.794+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:16:57.795+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:16:57.796+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /projects/status/test
+2025-02-04T21:16:57.796+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/projects/status/test", parameters={}
+2025-02-04T21:16:57.799+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T21:16:57.830+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T21:16:57.833+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/status/test.]
+2025-02-04T21:16:57.836+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T21:16:57.850+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:16:57.861+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:16:57.864+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:16:57.869+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:16:57.872+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:16:57.873+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:16:57 CET 2025, status=404, error=Not Found, path=/projects/status/test}]
+2025-02-04T21:16:57.876+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T21:18:55.247+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /projects/byname/test
+2025-02-04T21:18:55.247+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:18:55.247+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:18:55.247+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /projects/byname/test
+2025-02-04T21:18:55.247+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/projects/byname/test", parameters={}
+2025-02-04T21:18:55.247+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T21:18:55.267+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T21:18:55.267+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/byname/test.]
+2025-02-04T21:18:55.267+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T21:18:55.267+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:18:55.267+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:18:55.267+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:18:55.267+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:18:55.267+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:18:55.267+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:18:55 CET 2025, status=404, error=Not Found, path=/projects/byname/test}]
+2025-02-04T21:18:55.280+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T21:18:59.438+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /projects/byname/Project Alpha
+2025-02-04T21:18:59.440+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:18:59.440+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:18:59.441+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /projects/byname/Project Alpha
+2025-02-04T21:18:59.441+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/projects/byname/Project%20Alpha", parameters={}
+2025-02-04T21:18:59.442+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T21:18:59.447+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T21:18:59.448+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/byname/Project%20Alpha.]
+2025-02-04T21:18:59.448+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T21:18:59.449+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:18:59.449+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:18:59.449+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:18:59.450+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:18:59.450+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:18:59.451+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:18:59 CET 2025, status=404, error=Not Found, path=/projects/byname/Project% (truncated)...]
+2025-02-04T21:18:59.452+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T21:19:42.237+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /projects/Project Alpha
+2025-02-04T21:19:42.241+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:19:42.241+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:19:42.241+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /projects/Project Alpha
+2025-02-04T21:19:42.243+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/projects/Project%20Alpha", parameters={}
+2025-02-04T21:19:42.243+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to de.szut.lf8_starter.project.ProjectController#getById(Long)
+2025-02-04T21:19:42.260+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public de.szut.lf8_starter.project.dto.ProjectGetDto de.szut.lf8_starter.project.ProjectController.getById(java.lang.Long): Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "ProjectAlpha"
+2025-02-04T21:19:42.261+01:00  WARN 20032 --- [lf8_starter] [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "ProjectAlpha"]
+2025-02-04T21:19:42.261+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-02-04T21:19:42.263+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:19:42.263+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:19:42.263+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:19:42.263+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:19:42.264+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:19:42.265+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:19:42 CET 2025, status=400, error=Bad Request, path=/projects/Project%20Alp (truncated)...]
+2025-02-04T21:19:42.266+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2025-02-04T21:19:47.740+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /projects/Project Alpha/test
+2025-02-04T21:19:47.743+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:19:47.743+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:19:47.743+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /projects/Project Alpha/test
+2025-02-04T21:19:47.743+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/projects/Project%20Alpha/test", parameters={}
+2025-02-04T21:19:47.744+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T21:19:47.760+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T21:19:47.761+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/Project%20Alpha/test.]
+2025-02-04T21:19:47.761+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T21:19:47.763+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:19:47.763+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:19:47.764+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:19:47.765+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:19:47.765+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:19:47.766+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:19:47 CET 2025, status=404, error=Not Found, path=/projects/Project%20Alpha (truncated)...]
+2025-02-04T21:19:47.767+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T21:22:15.322+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /projects/Project Alpha/test
+2025-02-04T21:22:15.327+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.web.client.RestTemplate              : HTTP GET https://keycloak.szut.dev/auth/realms/szut/protocol/openid-connect/certs
+2025-02-04T21:22:15.329+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-02-04T21:22:15.441+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.web.client.RestTemplate              : Response 200 OK
+2025-02-04T21:22:15.441+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+2025-02-04T21:22:15.445+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:22:15.446+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:22:15.446+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /projects/Project Alpha/test
+2025-02-04T21:22:15.446+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/projects/Project%20Alpha/test", parameters={}
+2025-02-04T21:22:15.447+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T21:22:15.456+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T21:22:15.457+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/Project%20Alpha/test.]
+2025-02-04T21:22:15.457+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T21:22:15.459+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:22:15.459+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:22:15.459+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:22:15.459+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:22:15.461+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:22:15.461+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:22:15 CET 2025, status=404, error=Not Found, path=/projects/Project%20Alpha (truncated)...]
+2025-02-04T21:22:15.463+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T21:24:26.497+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /projects/Project Alpha/test
+2025-02-04T21:24:26.517+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:24:26.533+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:24:26.533+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /projects/Project Alpha/test
+2025-02-04T21:24:26.533+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/projects/Project%20Alpha/test", parameters={}
+2025-02-04T21:24:26.533+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T21:24:26.565+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T21:24:26.565+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/Project%20Alpha/test.]
+2025-02-04T21:24:26.565+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T21:24:26.575+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:24:26.575+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:24:26.575+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:24:26.575+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:24:26.580+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:24:26.580+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:24:26 CET 2025, status=404, error=Not Found, path=/projects/Project%20Alpha (truncated)...]
+2025-02-04T21:24:26.580+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T21:25:11.800+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /projects/Project Alpha/test
+2025-02-04T21:25:11.800+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:25:11.800+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:25:11.800+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /projects/Project Alpha/test
+2025-02-04T21:25:11.800+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/projects/Project%20Alpha/test", parameters={}
+2025-02-04T21:25:11.800+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T21:25:11.815+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T21:25:11.815+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/Project%20Alpha/test.]
+2025-02-04T21:25:11.815+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T21:25:11.815+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:25:11.815+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:25:11.815+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:25:11.815+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:25:11.815+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:25:11.815+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:25:11 CET 2025, status=404, error=Not Found, path=/projects/Project%20Alpha (truncated)...]
+2025-02-04T21:25:11.815+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T21:25:26.344+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /projects/Project 20Alpha/test
+2025-02-04T21:25:26.349+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2025-02-04T21:25:26.349+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@8fd70c08, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=9785BB8701CF5C9F39231E6754A740EA], Granted Authorities=[ROLE_product_owner, ROLE_offline_access, ROLE_default-roles-szut, ROLE_uma_authorization, ROLE_user]]
+2025-02-04T21:25:26.349+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /projects/Project 20Alpha/test
+2025-02-04T21:25:26.350+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/projects/Project%2020Alpha/test", parameters={}
+2025-02-04T21:25:26.350+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-02-04T21:25:27.163+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-02-04T21:25:27.164+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource projects/Project%2020Alpha/test.]
+2025-02-04T21:25:27.165+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-02-04T21:25:27.166+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-02-04T21:25:27.167+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-02-04T21:25:27.167+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-02-04T21:25:27.167+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-02-04T21:25:27.169+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-02-04T21:25:27.169+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 04 21:25:27 CET 2025, status=404, error=Not Found, path=/projects/Project%2020Alp (truncated)...]
+2025-02-04T21:25:27.170+01:00 DEBUG 20032 --- [lf8_starter] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-02-04T21:27:41.680+01:00  INFO 20032 --- [lf8_starter] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-04T21:27:42.146+01:00  INFO 20032 --- [lf8_starter] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-04T21:27:42.228+01:00  INFO 20032 --- [lf8_starter] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-04T21:27:42.292+01:00 DEBUG 20032 --- [lf8_starter] [SpringApplicationShutdownHook] o.s.s.w.s.HttpSessionEventPublisher      : Publishing event: org.springframework.security.web.session.HttpSessionDestroyedEvent[source=org.apache.catalina.session.StandardSessionFacade@30366ccf]
